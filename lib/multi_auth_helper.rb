@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+# TODO: 不要なメソッドを削除する
 module MultiAuthHelper
 
   def production?

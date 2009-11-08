@@ -42,6 +42,8 @@ ActionController::Routing::Routes.draw do |map|
 
   # MEMO: 下記2行のデフォルトルールをコメントアウトしてrake test:functionalsを
   #       実行することにより、リンクチェックを行うことができる
+  # NOTE: この二行を有効にするとアプリケーション側の config/routes.rb で定義した
+  #       ルートが有効にならない
   map.connect ":controller/:action/:id"
   map.connect ":controller/:action/:id.:format"
 end
