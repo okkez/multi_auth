@@ -1,0 +1,34 @@
+
+<%- @title = "サインアップ" -%>
+
+<h1>メールアドレスによるサインアップ</h1>
+
+<%= render(:partial => "progress", :locals => {:step => 1}) %>
+
+<%- form_for(:signup_form, @signup_form, :url => {:action => "validate"}) { |f| -%>
+  <table border="1">
+    <tr>
+      <th><%= f.label(:email) %></th>
+      <td>
+        <%= f.text_field(:email, :size => 30) %>
+        <%= error_message_on(:signup_form, :email) %>
+        <%= error_message_on(:credential, :email) %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label(:password) %></th>
+      <td>
+        <div><%= f.password_field(:password, :size => 20) %></div>
+        <div><%= f.password_field(:password_confirmation, :size => 20) %></div>
+        <%= error_message_on(:signup_form, :password) %>
+      </td>
+    </tr>
+  </table>
+ <div><%= submit_tag("確認画面へ") %></div>
+<%- } -%>
+
+<%- unless production? -%>
+  <div class="debug">
+    <%= error_messages_for(:signup_form) %>
+  </div>
+<%- end -%>

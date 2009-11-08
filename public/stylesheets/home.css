@@ -1,0 +1,114 @@
+
+h1
+{
+    background-image: url(/images/h1-back.png);
+    background-repeat: repeat-x;
+    background-position: left center;
+}
+h1 span
+{
+    padding-right: 0.2em;
+    background-color: #F0F0F0;
+}
+
+h2
+{
+    background-image: url(/images/h1-back.png);
+    background-repeat: repeat-x;
+    background-position: left center;
+}
+h2 span
+{
+    padding-right: 0.2em;
+    background-color: #F0F0F0;
+}
+
+/* side-column */
+
+#side-column-inner h1
+{
+    margin-bottom: 8px;
+    color: #666666;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#side-column-inner hr
+{
+    height: 1px;
+    margin: 8px 0px;
+    border: none;
+    background-color: #CCCCCC;
+}
+
+#signup-link
+{
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+#signup-free
+{
+    margin-bottom: 10px;
+    font-size: 12px;
+    text-align: center;
+    color: #990000;
+}
+
+#openid-sites
+{
+    font-size: 12px;
+    line-height: 18px;
+}
+#openid-sites img
+{
+    vertical-align: text-bottom;
+}
+
+#side-column-inner form input.openid,
+#side-column-inner form input.openid-with-desc,
+#side-column-inner form input.email,
+#side-column-inner form input.email-with-desc,
+#side-column-inner form input.password,
+#side-column-inner form input.password-with-desc
+{
+    width: 160px; /* width:200 - (padding:20 + padding:18 + border:2)*/
+    height: 20px;
+    margin-bottom: 4px;
+    padding-left: 18px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #666666;
+    background-repeat: no-repeat;
+    background-position: 1px;
+}
+
+#side-column-inner form input.openid
+{
+    background-image: url(/images/icons/openid.png);
+}
+
+#side-column-inner form input.openid-with-desc
+{
+    background-image: url(/images/icons/openid-with-desc.png);
+}
+
+#side-column-inner form input.email
+{
+    background-image: url(/images/icons/fam/email.png);
+}
+
+#side-column-inner form input.email-with-desc
+{
+    background-image: url(/images/icons/fam/email-with-desc.png);
+}
+
+#side-column-inner form input.password
+{
+    background-image: url(/images/icons/fam/key.png);
+}
+
+#side-column-inner form input.password-with-desc
+{
+    background-image: url(/images/icons/fam/key-with-desc.png);
+}

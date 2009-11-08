@@ -1,0 +1,16 @@
+
+<%- @title = "サインアップ" -%>
+
+<h1>サインアップ</h1>
+
+<%- form_tag(:action => "authenticate") { -%>
+  <table border="1">
+    <tr>
+      <th><%= label_tag("openid_url", "OpenID URL") %></th>
+      <td>
+        <%= text_field_tag("openid_url", @openid_url, :size => 20) %>
+      </td>
+    </tr>
+  </table>
+  <div><%= submit_tag("次へ") %></div>
+<%- } -%>

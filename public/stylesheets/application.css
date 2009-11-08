@@ -1,0 +1,365 @@
+
+/* generic */
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    width: 100%;
+    background-color: #F0F0F0;
+}
+
+a
+{
+    color: #0066CC;
+    text-decoration: none;
+}
+
+a:hover
+{
+    text-decoration: underline;
+}
+
+a img
+{
+    border-width: 0;
+}
+
+/* head */
+
+#head-outer
+{
+    position: relative;
+    width: 100%;
+    min-width: 700px;
+    height: 120px;
+    background-color: #000000;
+    background-image: url(/images/logo-back.png);
+    background-repeat: repeat-x;
+}
+
+#head-inner
+{
+}
+
+#head-logo
+{
+    position: relative;
+    width: 350px;
+}
+#head-logo img
+{
+    display: block;
+}
+
+#head-navi
+{
+    position: absolute;
+    top: 95px;
+    right: 10px;
+    font-size: 13px;
+    line-height: 20px;
+    color: #CCCCCC;
+}
+#head-navi a
+{
+    color: #99CCFF;
+}
+
+#head-ad
+{
+    position: absolute;
+    width: 470px;
+    height: 62px;
+    top: 25px;
+    right: 20px;
+}
+
+/* body */
+
+#body-outer-with-background,
+#body-outer-without-background
+{
+    position: relative;
+    width: 100%;
+    min-width: 700px;
+}
+
+#body-outer-with-background
+{
+    background-image: url(../images/side-column-back.png);
+    background-repeat: repeat-y;
+    background-position: right;
+}
+
+#body-inner
+{
+}
+
+#content-outer
+{
+}
+
+#content-inner
+{
+    padding: 10px;
+}
+
+#content-column-outer
+{
+    margin: 0px 200px 0px 0px;
+}
+
+#content-column-inner
+{
+    padding: 10px;
+}
+
+#side-column-outer
+{
+    width: 200px;
+    min-height: 400px;
+}
+
+#side-column-inner
+{
+    padding: 10px;
+}
+
+/* foot */
+
+#foot-outer
+{
+    width: 100%;
+    min-width: 700px;
+    border-width: 1px 0px 0px 0px;
+    border-style: solid;
+    border-color: #D0D0D0;
+}
+
+#foot-inner
+{
+    padding: 20px;
+}
+
+#foot-powerd
+{
+    float: right;
+    font-size: 90%;
+    font-weight: bold;
+    color: #999999;
+}
+#foot-powerd a
+{
+    color: #333333;
+}
+
+#foot-github
+{
+    font-size: 95%;
+}
+
+#foot-services
+{
+    font-size: 90%;
+    color: #999999;
+}
+#foot-services a
+{
+    color: #333333;
+}
+
+/* topic path */
+
+#topic-path
+{
+    padding: 0.1em 0.4em;
+    background-color: #E0E0E0;
+    color: #999999;
+    font-size: 90%;
+}
+
+#topic-path a
+{
+}
+
+#topic-path em
+{
+    color: #666666;
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* for debug */
+
+div.debug
+{
+    margin-top: 1em;
+    background-color: #FFF0F0;
+}
+
+/* table.list */
+
+table.list
+{
+    border-collapse: collapse;
+}
+
+table.list thead tr th
+{
+    padding: 0.4em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #F0F0F0;
+    color: #CCCCCC;
+    background-color: #333333;
+}
+
+table.list tbody tr
+{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #F0F0F0;
+}
+
+table.list tbody tr td
+{
+    padding: 0.2em 0.4em;
+    border-width: 0;
+}
+
+table.list tbody tr.even td
+{
+    background-color: #E0E0E0;
+}
+
+table.list tbody tr.odd td
+{
+    background-color: #D0D0D0;
+}
+
+/* table.energies */
+
+table.energies img
+{
+    vertical-align: text-top;
+}
+
+table.energies thead tr th
+{
+    font-size: 70%;
+}
+
+table.energies tbody tr td
+{
+    font-size: 80%;
+}
+
+table.energies tfoot td
+{
+    color: #999999;
+    text-align: right;
+}
+
+/* table.events */
+
+table.events img
+{
+    vertical-align: text-top;
+}
+
+table.events thead tr th
+{
+    font-size: 70%;
+}
+
+table.events tbody tr td
+{
+    font-size: 80%;
+}
+
+table.events tfoot td
+{
+    color: #999999;
+    text-align: right;
+}
+
+/* battery */
+
+div.battery-cell
+{
+    margin: 0;
+    padding: 4px 7px 4px 5px;
+    width: 100px;
+    height: 13px;
+    background-image: url(/images/battery/cell.png);
+    background-repeat: no-repeat;
+}
+
+div.battery-level
+{
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    height: 13px;
+}
+
+div.battery-high,
+div.battery-middle,
+div.battery-low,
+div.battery-empty
+{
+    margin: 0;
+    padding: 0;
+    height: 13px;
+    background-repeat: repeat-x;
+}
+
+div.battery-high
+{
+    background-image: url(/images/battery/level-green.png);
+}
+
+div.battery-middle
+{
+    background-image: url(/images/battery/level-orange.png);
+}
+
+div.battery-low
+{
+    background-image: url(/images/battery/level-yellow.png);
+}
+
+div.battery-empty
+{
+    background-image: url(/images/battery/level-red.png);
+}
+
+/* signup-progress */
+/* FIXME: 別ファイルに分離 */
+
+ol#email-signup-progress
+{
+}
+
+ol#email-signup-progress li
+{
+    display: inline;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+ol#email-signup-progress li.active
+{
+    font-weight: bold;
+}
+
+ol#email-signup-progress li.inactive
+{
+    font-weight: normal;
+}

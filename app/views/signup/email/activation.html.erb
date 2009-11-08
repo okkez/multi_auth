@@ -1,0 +1,27 @@
+
+<%- @title = "サインアップ" -%>
+
+<h1>本登録確認</h1>
+
+<%= render(:partial => "progress", :locals => {:step => 4}) %>
+
+<%- if @credential -%>
+ <div>有効なアクティベーションキー</div>
+ <%- if @activated -%>
+  <div>アクティベート済み</div>
+ <%- else -%>
+  <div>未アクティベート</div>
+  <table border="1">
+    <tr>
+      <th>メールアドレス</th>
+      <td><%=h @credential.email %></td>
+    </tr>
+  </table>
+  <%- form_tag(:action => "activate") { -%>
+   <%= hidden_field_tag("activation_token", @credential.activation_token) %>
+   <%= submit_tag("本登録") %>
+  <%- } -%>
+ <%- end -%>
+<%- else -%>
+ <div>無効なアクティベーションキー</div>
+<%- end -%>
