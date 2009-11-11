@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
 
 module ApplicationHelper
-  include MultiCredentialsHelper
+  include MultiAuthHelper
 end
