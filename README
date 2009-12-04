@@ -3,3 +3,30 @@ MultiAuth
 
 This engine provides basic login functionality for your Rails applications.
 
+Install
+=======
+
+  $ ./script/plugin install git://github.com/okkez/multi_auth.git
+
+Setup
+=====
+
+  $ rake multi_autl:copy:all
+
+copy migrations, stylesheets and images from multi_auth plugin.
+
+  $ rake db:migrate
+
+You must have a model 'User'. User model has any columns which you want to add.
+
+Customize
+=========
+
+If you want customize views, you create RAILS_ROOT/app/view/{activation_mailer,auth,credentials,signup}/*.
+
+
+TODO
+====
+
+see TODO.ja
+

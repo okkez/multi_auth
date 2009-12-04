@@ -1,10 +1,10 @@
 TODO
 
 * active_form の最新版を使用するようにする
-  * 最新版がどこにあるのかわからない
-* gettext を Rails Engines で使う方法を調べる
+  * 最新版がどこにあるのかわからない -> nayutaya-active-form gem を入れた
+* gettext を Rails Engines で使う方法を調べる -> bind_textdomain, init_gettext あたり
 * i18n 対応する
-* Rails 標準の i18n と gettext-rails を比較する
+  * Rails 標準の i18n と gettext-rails を比較する -> gettext を使う
 * コードを確認して不要なファイルを消す (画像など)
 * スタイルシートを整理する
 * Rails Engines で Cells を使用できるか調査する
