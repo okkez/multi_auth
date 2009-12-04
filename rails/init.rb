@@ -14,6 +14,7 @@ config.gem "locale_rails", :version => ">= 2.0.4"
 config.gem "gettext", :version => ">= 2.0.4"
 config.gem "gettext_activerecord", :version => ">= 2.0.4"
 config.gem "gettext_rails", :version => ">= 2.0.4"
+config.gem "nayutaya-active-form", :lib => "active_form"
 
 # FIXME: これで正しいのかもう少し考える
 config.action_mailer.raise_delivery_errors = true
