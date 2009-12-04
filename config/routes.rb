@@ -4,7 +4,9 @@ ActionController::Routing::Routes.draw do |map|
   IdPattern    = /[0-9]+/
   TokenPattern = /[0-9a-f]+/
 
-  map.root :controller => "home", :action => "index"
+  if Rails.root.to_s == File.expand_path(File.join(File.dirname(__FILE__), '..'))
+    map.root :controller => "home", :action => "index"
+  end
 
   map.connect "signup", :controller => "signup", :action => "index"
 
