@@ -4,8 +4,8 @@
 class ActivationMailer < ActionMailer::Base
   include ActionMailerUtil
 
-  SubjectPrefix = "[#{MultiCredentials.application_name}] "
-  FromAddress   = MultiCredentials.from_address
+  SubjectPrefix = "[#{MultiAuth.application_name}] "
+  FromAddress   = MultiAuth.from_address
 
   def self.create_request_for_signup_params(options)
     options = options.dup
