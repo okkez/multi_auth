@@ -11,7 +11,7 @@ Install
 Setup
 =====
 
-  $ rake multi_autl:copy:all
+  $ rake multi_auth:copy:all
 
 copy migrations, stylesheets and images from multi_auth plugin.
 
@@ -22,7 +22,7 @@ You must have a model 'User'. User model has any columns which you want to add.
 Customize
 =========
 
-If you want customize views, you create RAILS_ROOT/app/view/{activation_mailer,auth,credentials,signup}/*.
+If you want to custom views, you create RAILS_ROOT/app/view/{activation_mailer,auth,credentials,signup}/*.
 
 
 TODO
