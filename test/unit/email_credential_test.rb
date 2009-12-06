@@ -65,7 +65,7 @@ class EmailCredentialTest < ActiveSupport::TestCase
     #       * ドメインパートのドットで区切られたパートは63文字以内
 
     [
-      ["a@b.c.d.com", 11, true ],
+      ["a@b.cd.ef.com", 13, true ],
       [["a" * 64 + "@" + "b" * 63, "c" * 63, "d" * 3, "com"].join("."), 200, true ],
       [["a" * 64 + "@" + "b" * 63, "c" * 63, "d" * 4, "com"].join("."), 201, false],
     ].each { |value, length, expected|
