@@ -20,21 +20,24 @@ PKG_FILES = FileList[
                      'rails/init.rb',
                      'test/**/*.rb'
                     ]
+
 spec = Gem::Specification.new do |s|
-  s.name = 'multi_auth'
-  s.version = '0.0.1'
-  s.author = 'okkez'
-  s.email = 'okkez000@gmail.com'
-  s.homepage = 'https://github.com/okkez/multi_auth'
-  s.platform = Gem::Platform::RUBY
-  s.summary = "xxx"
-  s.files = PKG_FILES.to_a
-  s.require_path = 'lib'
-  s.has_rdoc = false
+  s.name             = ENV['GEM_NAME'] || 'multi_auth'
+  s.version          = '0.0.1'
+  s.author           = 'okkez'
+  s.email            = ''
+  s.homepage         = 'https://github.com/okkez/multi_auth'
+  s.platform         = Gem::Platform::RUBY
+  s.summary          = "This Rails plugin provides basic login fanctionality"
+  s.files            = PKG_FILES.to_a
+  s.require_path     = 'lib'
+  s.has_rdoc         = true
   s.extra_rdoc_files = ['README']
+
+  s.add_dependency("open_id_authentication")
+  s.add_dependency("validates_email_format_of")
 end
 
-desc 'Turn this plugin into a gem.'
 Rake::GemPackageTask.new(spec) do |pkg|
   pkg.gem_spec = spec
 end
