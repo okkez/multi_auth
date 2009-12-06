@@ -25,6 +25,9 @@ Rails::Initializer.run do |config|
   #config.gem "nayutaya-webhook-dispatcher", :version => ">= 0.0.2", :lib => "webhook-dispatcher", :source => "http://gems.github.com"
   #config.gem "mislav-will_paginate", :version => "> 2.3.2", :lib => "will_paginate", :source => "http://gems.github.com"
   config.gem "ruby-openid", :lib => 'openid'
+  # FIXME: use moro-open_id_authentication
+  config.gem "open_id_authentication"
+  config.gem "validates_email_format_of"
   config.gem "locale", :version => ">= 2.0.4"
   config.gem "locale_rails", :version => ">= 2.0.4"
   config.gem "gettext", :version => ">= 2.0.4"

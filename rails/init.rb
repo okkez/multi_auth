@@ -7,6 +7,7 @@ Dir.glob(File.join(plugin_root, 'lib', '*.rb')).each do |f|
 end
 
 config.gem "ruby-openid", :lib => 'openid'
+# FIXME use moro-open_id_authentication
 config.gem "open_id_authentication"
 config.gem "validates_email_format_of"
 config.gem "locale", :version => ">= 2.0.4"
