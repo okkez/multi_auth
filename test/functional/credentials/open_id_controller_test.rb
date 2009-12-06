@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 require 'test_helper'
 
@@ -289,6 +290,7 @@ class Credentials::OpenIdControllerTest < ActionController::TestCase
       def(:timeout_protection_from_identity_server) {
         obj = Object.new
         meta = (class << obj; self; end)
+        meta.__send__(:define_method, :identity_url) { identity_url }
         meta.__send__(:define_method, :display_identifier) { identity_url }
         meta.__send__(:define_method, :status) { status }
         meta.__send__(:define_method, :setup_url) { nil }
