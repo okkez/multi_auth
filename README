@@ -6,14 +6,18 @@ This engine provides basic login functionality for your Rails applications.
 Install
 =======
 
-  $ ./script/plugin install git://github.com/okkez/multi_auth.git
+  $ sudo gem install okkez-multi_auth
 
 Setup
 =====
 
+  $ ruby script/generate open_id_authentication_tables create_open_id_authentication_tables
+
+Create migrations for open_id_authentication.
+
   $ rake multi_auth:copy:all
 
-copy migrations, stylesheets and images from multi_auth plugin.
+Copy migrations, stylesheets and images from multi_auth plugin.
 
   $ rake db:migrate
 
