@@ -1,0 +1,5 @@
+Description:
+    Sets up MultiAuth in your Rails project. 
+
+Examples:
+    `./script/generate mutli_auth`

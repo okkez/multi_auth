@@ -18,12 +18,13 @@ PKG_FILES = FileList[
                      'lib/**/*.rb',
                      'public/**/*',
                      'rails/init.rb',
+                     'generators/**/*',
                      'test/**/*.rb'
                     ]
 
 spec = Gem::Specification.new do |s|
   s.name             = ENV['GEM_NAME'] || 'multi_auth'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2dev'
   s.author           = 'okkez'
   s.email            = ''
   s.homepage         = 'https://github.com/okkez/multi_auth'
