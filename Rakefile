@@ -34,10 +34,15 @@ spec = Gem::Specification.new do |s|
   s.has_rdoc         = true
   s.extra_rdoc_files = ['README']
 
-  s.add_dependency("open_id_authentication")
+  s.add_dependency("okkez-open_id_authentication")
   s.add_dependency("validates_email_format_of")
 end
 
 Rake::GemPackageTask.new(spec) do |pkg|
   pkg.gem_spec = spec
+end
+
+desc "Create or Update gemspec file"
+task :gemspec do
+  File.open("#{spec.name}.gemspec", 'w+'){|file| file.puts(spec.to_ruby) }
 end
