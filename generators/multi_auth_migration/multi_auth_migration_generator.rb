@@ -1,5 +1,5 @@
 
-class MultiAuthGenerator < Rails::Generator::NamedBase
+class MultiAuthMigrationGenerator < Rails::Generator::NamedBase
   def initialize(runtime_args, runtime_options = { })
     super
   end
