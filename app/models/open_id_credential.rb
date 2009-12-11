@@ -15,7 +15,7 @@
 class OpenIdCredential < ActiveRecord::Base
   MaximumRecordsPerUser = 10
 
-  belongs_to :user
+  belongs_to :user, :class_name => MultiAuth.user_model, :foreign_key => 'user_id'
 
   validates_presence_of :identity_url
   validates_length_of :identity_url, :maximum => 200, :allow_nil => true

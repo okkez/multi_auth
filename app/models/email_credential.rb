@@ -22,7 +22,7 @@ class EmailCredential < ActiveRecord::Base
   HashedPasswordPattern = /\A([0-9a-f]{8}):([0-9a-f]{64})\z/
   MaximumRecordsPerUser = 10
 
-  belongs_to :user
+  belongs_to :user, :class_name => MultiAuth.user_model, :foreign_key => 'user_id'
 
   validates_presence_of :email
   validates_presence_of :activation_token

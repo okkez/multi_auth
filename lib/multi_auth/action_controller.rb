@@ -14,7 +14,7 @@ module MultiAuth
       private
 
       def authentication(user_id = session[:user_id])
-        @login_user = User.find_by_id(user_id)
+        @login_user = MultiAuth.user_model_class.find_by_id(user_id)
         return true
       end
 

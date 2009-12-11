@@ -42,7 +42,7 @@ class Signup::OpenIdController < ApplicationController
   def create
     @identity_url = session[:identity_url]
 
-    @user = User.new
+    @user = MultiAuth.user_model_class.new
     @credential = @user.open_id_credentials.build
     @credential.identity_url = @identity_url
 

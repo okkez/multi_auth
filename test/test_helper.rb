@@ -41,6 +41,7 @@ class ActiveSupport::TestCase
   #
   # Note: You'll currently still have to declare fixtures explicitly in integration tests
   # -- they do not yet inherit this setting
+  set_fixture_class({ :users => DummyUser })
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
@@ -79,4 +80,5 @@ class ActiveSupport::TestCase
     assert_nil(assigns(:flash_notice))
     assert_not_nil(assigns(:flash_error))
   end
+
 end

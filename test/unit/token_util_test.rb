@@ -19,19 +19,19 @@ class TokenUtilTest < ActiveSupport::TestCase
   end
 
   test "create_unique_token" do
-    assert_match(/\A[0-9a-f]{10}\z/, @mod.create_unique_token(User, :user_token, 10))
-    assert_match(/\A[0-9a-f]{20}\z/, @mod.create_unique_token(User, :user_token, 20))
-    assert_match(/\A[0-9a-f]{30}\z/, @mod.create_unique_token(User, :user_token, 30))
+    assert_match(/\A[0-9a-f]{10}\z/, @mod.create_unique_token(MultiAuth.user_model_class, :user_token, 10))
+    assert_match(/\A[0-9a-f]{20}\z/, @mod.create_unique_token(MultiAuth.user_model_class, :user_token, 20))
+    assert_match(/\A[0-9a-f]{30}\z/, @mod.create_unique_token(MultiAuth.user_model_class, :user_token, 30))
 
     srand(0)
     assert_not_equal(
-      @mod.create_unique_token(User, :user_token, 20),
-      @mod.create_unique_token(User, :user_token, 20))
+      @mod.create_unique_token(MultiAuth.user_model_class, :user_token, 20),
+      @mod.create_unique_token(MultiAuth.user_model_class, :user_token, 20))
   end
 
   test "create_unique_token, conflict" do
     [
-     [User,   :user_token],
+     [MultiAuth.user_model_class,   :user_token],
     ].each { |klass, column|
       exist_token  = klass.first[column]
       unique_token = "0" * exist_token.size

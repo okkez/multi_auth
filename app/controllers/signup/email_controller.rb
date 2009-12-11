@@ -45,7 +45,7 @@ class Signup::EmailController < ApplicationController
   def create
     @signup_form = EditFormClass.new(session[:signup_form])
 
-    @user = User.new
+    @user = MultiAuth.user_model_class.new
     @credential = @user.email_credentials.build
     @credential.attributes = @signup_form.to_email_credential_hash
 

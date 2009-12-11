@@ -128,13 +128,13 @@ class NoticeFormatterTest < ActiveSupport::TestCase
 
   test "format_part_of_user" do
     expected = {
-      "user:token"         => "0" * User::TokenLength,
-      "user:token:json"    => '"' + "0" * User::TokenLength + '"',
+      "user:token"         => "0" * MultiAuth.user_model_class::TokenLength,
+      "user:token:json"    => '"' + "0" * MultiAuth.user_model_class::TokenLength + '"',
       "user:nickname"      => "nickname",
       "user:nickname:json" => '"nickname"',
     }
-    user = User.new(
-      :user_token => "0" * User::TokenLength,
+    user = MultiAuth.user_model_class.new(
+      :user_token => "0" * MultiAuth.user_model_class::TokenLength,
       :nickname   => "nickname")
     assert_equal(expected, @module.format_part_of_user(user))
   end
@@ -146,7 +146,7 @@ class NoticeFormatterTest < ActiveSupport::TestCase
       "user:nickname"      => "-",
       "user:nickname:json" => "null",
     }
-    assert_equal(expected, @module.format_part_of_user(User.new))
+    assert_equal(expected, @module.format_part_of_user(MultiAuth.user_model_class.new))
     assert_equal(expected, @module.format_part_of_user(nil))
   end
 

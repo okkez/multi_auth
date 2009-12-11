@@ -153,7 +153,7 @@ class Signup::EmailControllerTest < ActionController::TestCase
     @request.session[:signup_form] = @signup_form.attributes
 
     assert_difference("EmailCredential.count", +1) {
-      assert_difference("User.count", +1) {
+      assert_difference("#{MultiAuth.user_model}.count", +1) {
         post :create
       }
     }
