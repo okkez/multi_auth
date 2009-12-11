@@ -15,13 +15,20 @@ Setup
 
 Create migrations for open_id_authentication.
 
-  $ rake multi_auth:copy:all
+  $ ruby script/generate multi_auth_migration create_multi_auth_tables
 
-Copy migrations, stylesheets and images from multi_auth plugin.
+Create migrations for multi_auth.
 
   $ rake db:migrate
 
 You must have a model 'User'. User model has any columns which you want to add.
+
+Ex.
+
+  class User < ActiveRecord::Base
+    multi_auth
+  end
+
 
 Customize
 =========
