@@ -10,7 +10,6 @@
   * Cells ( http://cells.rubyforge.org/ ) を使用して汎用的な部品を作成する
 * ドキュメントを整備する
 
-* TokenLength などの定数をなんとかする
 
 
 = DONE
@@ -18,3 +17,5 @@
 * テストでは User モデルを使わないようにする -> done
 * active_form の最新版を使用するようにする
   * 最新版がどこにあるのかわからない -> nayutaya-active-form gem を入れた
+* TokenLength などの定数をなんとかする
+  * DummyUser にしかないのでなんとかしなくても大丈夫
