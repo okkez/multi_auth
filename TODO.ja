@@ -10,12 +10,14 @@
   * Cells ( http://cells.rubyforge.org/ ) を使用して汎用的な部品を作成する
 * ドキュメントを整備する
 
+* レイアウトをなんとかする
+  * レイアウトを明示的に適用したりしなかったりする
 
 
 = DONE
 
-* テストでは User モデルを使わないようにする -> done
+* テストでは User モデルを使わないようにする
 * active_form の最新版を使用するようにする
-  * 最新版がどこにあるのかわからない -> nayutaya-active-form gem を入れた
+  * nayutaya-active-form gem を入れた
 * TokenLength などの定数をなんとかする
   * DummyUser にしかないのでなんとかしなくても大丈夫
