@@ -1,5 +1,6 @@
 TODO
 
+* テストでは User モデルを使わないようにする
 * active_form の最新版を使用するようにする
   * 最新版がどこにあるのかわからない -> nayutaya-active-form gem を入れた
 * gettext を Rails Engines で使う方法を調べる -> bind_textdomain, init_gettext あたり
