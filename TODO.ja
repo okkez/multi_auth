@@ -1,8 +1,5 @@
-TODO
+= TODO
 
-* テストでは User モデルを使わないようにする
-* active_form の最新版を使用するようにする
-  * 最新版がどこにあるのかわからない -> nayutaya-active-form gem を入れた
 * gettext を Rails Engines で使う方法を調べる -> bind_textdomain, init_gettext あたり
 * i18n 対応する
   * Rails 標準の i18n と gettext-rails を比較する -> gettext を使う
@@ -13,3 +10,11 @@ TODO
   * Cells ( http://cells.rubyforge.org/ ) を使用して汎用的な部品を作成する
 * ドキュメントを整備する
 
+* TokenLength などの定数をなんとかする
+
+
+= DONE
+
+* テストでは User モデルを使わないようにする -> done
+* active_form の最新版を使用するようにする
+  * 最新版がどこにあるのかわからない -> nayutaya-active-form gem を入れた
