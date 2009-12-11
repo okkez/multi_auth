@@ -2,9 +2,9 @@
 
 require 'test_helper'
 
-class UserTest < ActiveSupport::TestCase
+class DummyUserTest < ActiveSupport::TestCase
   def setup
-    @klass = User
+    @klass = DummyUser
     @basic = @klass.new(
       :user_token => "0" * @klass::TokenLength,
       :nickname   => "nickname")

@@ -12,13 +12,14 @@
 #
 
 # ユーザ
-class User < ActiveRecord::Base
+class DummyUser < ActiveRecord::Base
+  untranslate_all
+  set_table_name 'users'
   NicknameMaximumLength = 40
   TokenLength  = 20
   TokenPattern = TokenUtil.create_token_regexp(TokenLength)
 
-  has_many :open_id_credentials
-  has_many :email_credentials
+  multi_auth
 
   validates_presence_of :user_token
   validates_length_of :nickname, :maximum => NicknameMaximumLength, :allow_nil => true
