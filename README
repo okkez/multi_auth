@@ -1,12 +1,16 @@
 MultiAuth
 =========
 
-This engine provides basic login functionality for your Rails applications.
+This engine provides basic signup/login functionality for your Rails applications.
 
 Install
 =======
 
   $ sudo gem install okkez-multi_auth
+
+or
+
+  $ sudo gem install multi_auth
 
 Setup
 =====
