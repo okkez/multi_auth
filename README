@@ -33,6 +33,14 @@ Ex.
     multi_auth
   end
 
+You can use MultiAuthHelper, see below.
+
+Ex.
+
+  module ApplicationHelper
+    include MultiAuthHelper
+  end
+
 
 Customize
 =========
