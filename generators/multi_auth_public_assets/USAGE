@@ -1,0 +1,5 @@
+Description:
+    Sets up MultiAuth style sheet and icons in your Rails project. 
+
+Examples:
+    `./script/generate mutli_auth_public_assets`
