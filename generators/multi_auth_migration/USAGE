@@ -2,4 +2,4 @@ Description:
     Sets up MultiAuth in your Rails project. 
 
 Examples:
-    `./script/generate mutli_auth`
+    `./script/generate mutli_auth_migration create_multi_auth_tables`
