@@ -15,6 +15,15 @@ or
 Setup
 =====
 
+RAILS_ROOT/config/environment.rb:
+
+  config.gem "multi_auth"
+
+or
+
+  config.gem "okkez-multi_auth", :lib => "multi_auth"
+
+
   $ ruby script/generate open_id_authentication_tables create_open_id_authentication_tables
 
 Create migrations for open_id_authentication.
@@ -41,11 +50,15 @@ Ex.
     include MultiAuthHelper
   end
 
+You can use default style sheet and icons.
+
+  $ ruby script/generate multi_auth_public_assets
+
 
 Customize
 =========
 
-If you want to custom views, you create RAILS_ROOT/app/view/{activation_mailer,auth,credentials,signup}/*.
+If you want to use custom views, you can create RAILS_ROOT/app/view/{activation_mailer,auth,credentials,signup}/*.
 
 
 TODO
