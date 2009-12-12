@@ -17,6 +17,12 @@ config.gem "gettext_activerecord", :version => ">= 2.0.4"
 config.gem "gettext_rails", :version => ">= 2.0.4"
 config.gem "nayutaya-active-form", :lib => "active_form"
 
+unless File.exist?(Rails.root + "config/smtp.yml")
+  FileUtils.cp(File.join(plugin_root, 'config/smtp.yml.sample'),
+               Rails.root + "config/smtp.yml",
+               :verbose => true)
+end
+
 # FIXME: これで正しいのかもう少し考える
 config.action_mailer.raise_delivery_errors = true
 config.action_mailer.delivery_method = :smtp
