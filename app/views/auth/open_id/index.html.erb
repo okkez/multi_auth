@@ -1,16 +1,25 @@
 
 <%- @title = "ログイン" -%>
+<%- @enable_side_column = false -%>
 
-<h1>OpenID によるログイン</h1>
+<div id="dialog">
+  <h1>OpenID によるログイン</h1>
 
-<%- form_tag(:action => "login") { -%>
-  <table border="1">
-    <tr>
-      <th><%= label_tag(:openid_url, "OpenID") %></th>
-      <td>
-        <%= text_field_tag(:openid_url, "", :size => 30) %>
-      </td>
-    </tr>
-  </table>
-  <div><%= submit_tag("ログイン") %></div>
-<%- } -%>
+  <%- form_tag(:action => "login") do -%>
+    <table border="1">
+      <tr>
+        <th><%= label_tag(:openid_url, "OpenID") %></th>
+        <td>
+          <%= text_field_tag(:openid_url, "", :size => 30) %>
+        </td>
+      </tr>
+    </table>
+    <div><%= submit_tag("ログイン") %></div>
+  <%- end -%>
+</div>
+
+<%- unless production? -%>
+  <div class="debug">
+    <%= error_messages_for(:login_form) %>
+  </div>
+<%- end -%>
