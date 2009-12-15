@@ -46,5 +46,3 @@ module MultiAuth
   end
 end
 
-ActionController::Base.__send__(:extend, MultiAuth::ActionController::ClassMethods)
-ActionController::Base.__send__(:include, MultiAuth::ActionController::InstanceMethods)

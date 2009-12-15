@@ -12,5 +12,3 @@ module MultiAuth
   end
 end
 
-ActiveRecord::Base.__send__(:extend, MultiAuth::ActiveRecord::ClassMethods)
-

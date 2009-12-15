@@ -28,3 +28,8 @@ config.action_mailer.raise_delivery_errors = true
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.smtp_settings = YAML.load_file(Rails.root + "config/smtp.yml")
 
+config.to_prepare do
+  ActiveRecord::Base.__send__(:extend, MultiAuth::ActiveRecord::ClassMethods)
+  ActionController::Base.__send__(:extend, MultiAuth::ActionController::ClassMethods)
+  ActionController::Base.__send__(:include, MultiAuth::ActionController::InstanceMethods)
+end
