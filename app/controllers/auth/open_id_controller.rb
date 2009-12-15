@@ -20,7 +20,7 @@ class Auth::OpenIdController < ApplicationController
         @open_id_credential = OpenIdCredential.find_by_identity_url(identity_url)
         if @open_id_credential
           @open_id_credential.login!
-          session[:user_id] = @open_id_credential.user.id
+          session[:user_id] = @open_id_credential.user_id
           flash[:notice] = "ログインしました。"
           redirect_to(root_path)
         else
