@@ -9,7 +9,7 @@ class MultiAuthPublicAssetsGeneratorTest < Test::Unit::TestCase
     @dest = File.expand_path(File.join(File.dirname(__FILE__), '../..', 'lib', 'generators'))
     FileUtils.ln_s(@src, @dest)
     FileUtils.mkdir_p(fake_rails_root)
-    @original_files = file_list
+    @original_files = Dir.glob(File.join(fake_rails_root, '**/*'))
   end
 
   def teardown
