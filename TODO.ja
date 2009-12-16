@@ -12,6 +12,7 @@
 
 * レイアウトをなんとかする
   * レイアウトを明示的に適用したりしなかったりする
+  * render :action => 'foo', :layout => false とか
 
 
 = DONE
