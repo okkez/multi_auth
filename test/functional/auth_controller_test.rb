@@ -5,9 +5,17 @@ class AuthControllerTest < ActionController::TestCase
   test "routes" do
     base = {:controller => "auth"}
 
+    assert_routing("/auth",            base.merge(:action => "index"))
     assert_routing("/auth/logged_in",  base.merge(:action => "logged_in"))
-    assert_routing("/auth/logout",          base.merge(:action => "logout"))
+    assert_routing("/auth/logout",     base.merge(:action => "logout"))
     assert_routing("/auth/logged_out", base.merge(:action => "logged_out"))
+  end
+
+  test "GET index" do
+    get :index
+
+    assert_response(:success)
+    assert_template("index")
   end
 
   test "GET logged_in" do

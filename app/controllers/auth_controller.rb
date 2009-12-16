@@ -4,6 +4,11 @@
 class AuthController < ApplicationController
   verify_method_post :only => [:logout]
 
+  # GET /auth/index
+  def index
+    # nop
+  end
+
   # GET /auth/logged_in
   def logged_in
     @return_path = params[:return_path]

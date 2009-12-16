@@ -62,7 +62,7 @@
 
 <div id="dialog">
   <h1>ログイン</h1>
-  <%- form_for(:login_form, @login_form, :url => {:action => "login"}) { |f| -%>
+  <%- form_for(:login_form, @login_form, :url => {:action => "login"}) do |f| -%>
     <table id="email-login">
       <tr>
         <th><%= f.label(:email) %></th>
@@ -79,8 +79,8 @@
         </td>
       </tr>
     </table>
-    <div style="text-align: center;"><%= submit_tag("ログイン") %></div>
-  <%- } -%>
+    <%= submit_tag("ログイン") %>
+  <%- end -%>
 </div>
 
 <%- unless production? -%>
