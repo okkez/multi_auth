@@ -6,7 +6,7 @@
 <%= render(:partial => "progress", :locals => {:step => 1}) %>
 
 <%- form_for(:signup_form, @signup_form, :url => {:action => "validate"}) { |f| -%>
-  <table border="1">
+  <table>
     <tr>
       <th><%= f.label(:email) %></th>
       <td>
