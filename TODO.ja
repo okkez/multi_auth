@@ -14,6 +14,10 @@
   * レイアウトを明示的に適用したりしなかったりする
   * render :action => 'foo', :layout => false とか
 
+* config/routes.rb を整理する
+  * map.resource, map.resources を使う。
+  * :only, :except オプションを使うと良さそう
+  * これならコントローラー名が変わった場合も NoMethodError で検出できそう
 
 = DONE
 
