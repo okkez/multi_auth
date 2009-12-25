@@ -5,25 +5,32 @@ ActionController::Routing::Routes.draw do |map|
   TokenPattern = /[0-9a-f]+/
 
   if Rails.root.to_s == File.expand_path(File.join(File.dirname(__FILE__), '..'))
-    map.root :controller => "home", :action => "index"
+    map.root :controller => "home", :conditions => { :method => :get }
   end
 
-  map.connect "signup", :controller => "signup", :action => "index"
+  map.signup "signup", :controller => "signup", :conditions => { :method => :get }
 
-  map.with_options :controller => "signup/email" do |email|
-    email.connect "signup/email/:action",                      :action => /(index|validate|validated|create|created|activate|activated)/
-    email.connect "signup/email/activation/:activation_token", :action => "activation", :activation_token => TokenPattern
+  map.namespace :signup do |signup|
+    signup.with_options :controller => "email" do |email|
+      email.connect "email/:action",                      :action => /(index|validate|validated|create|created|activate|activated)/
+      email.connect "email/activation/:activation_token", :action => "activation", :activation_token => TokenPattern
+    end
+    signup.with_options :controller => "open_id" do |open_id|
+      open_id.connect "open_id/:action", :action => /(index|authenticate|authenticated|create|created)/
+    end
   end
 
-  map.with_options :controller => "signup/open_id" do |open_id|
-    open_id.connect "signup/open_id/:action", :action => /(index|authenticate|authenticated|create|created)/
+  map.with_options :controller => "auth" do |auth|
+    auth.auth "auth", :action => "index", :conditions => { :method => :get }
+    auth.logout "auth/logout", :action => "logout", :conditions => { :method => :post }
+    auth.connect "auth/:action", :action => /(logged_in|logged_out)/, :conditions => { :method => :get }
+  end
+  map.namespace :auth do |auth|
+    auth.connect "email/:action", :controller => "email", :action => /(index|login)/
+    auth.connect "open_id/:action", :controller => "open_id", :action => /(index|login)/
   end
 
-  map.connect "auth/:action", :controller => "auth", :action => /(logged_in|logout|logged_out)/
-  map.connect "auth/email/:action", :controller => "auth/email", :action => /(index|login)/
-  map.connect "auth/open_id/:action", :controller => "auth/open_id", :action => /(index|login)/
-
-  map.connect "credentials/:action", :controller => "credentials", :action => /(index)/
+  map.credentials "credentials",  :controller => "credentials", :conditions => { :method => :get }
 
   map.with_options :controller => "credentials/email" do |email|
     email.connect "credentials/email/:action",                        :action => /(new|create)/

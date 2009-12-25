@@ -2,13 +2,16 @@
 require 'test_helper'
 
 class AuthControllerTest < ActionController::TestCase
-  test "routes" do
-    base = {:controller => "auth"}
-
-    assert_routing("/auth",            base.merge(:action => "index"))
-    assert_routing("/auth/logged_in",  base.merge(:action => "logged_in"))
-    assert_routing("/auth/logout",     base.merge(:action => "logout"))
-    assert_routing("/auth/logged_out", base.merge(:action => "logged_out"))
+  [
+   [:get,  "/auth",            "index"],
+   [:get,  "/auth/logged_in",  "logged_in"],
+   [:post, "/auth/logout",     "logout"],
+   [:get,  "/auth/logged_out", "logged_out"]
+  ].each do |method, path, action|
+    test "routes #{method} #{path}" do
+      base = {:controller => "auth"}
+      assert_routing({ :method => method, :path => path }, base.merge(:action => action))
+    end
   end
 
   test "GET index" do
