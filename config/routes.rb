@@ -36,16 +36,10 @@ ActionController::Routing::Routes.draw do |map|
     open_id.connect "credential/open_id/:open_id_credential_id/:action", :action => /(delete|destroy)/, :open_id_credential_id => IdPattern
   end
 
-  map.with_options :controller => "emails" do |emails|
-    emails.connect "emails/:action",                        :action => /(new|create)/
-    emails.connect "email/:email_address_id/:action",       :action => /(created|delete|destroy)/, :email_address_id => IdPattern
-    emails.connect "email/token/:activation_token/:action", :action => /(activation|activate|activated)/, :activation_token => TokenPattern
-  end
-
   # MEMO: 下記2行のデフォルトルールをコメントアウトしてrake test:functionalsを
   #       実行することにより、リンクチェックを行うことができる
   # NOTE: この二行を有効にするとアプリケーション側の config/routes.rb で定義した
   #       ルートが有効にならない
-  map.connect ":controller/:action/:id"
-  map.connect ":controller/:action/:id.:format"
+  # map.connect ":controller/:action/:id"
+  # map.connect ":controller/:action/:id.:format"
 end
