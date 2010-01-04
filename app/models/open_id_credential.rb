@@ -13,6 +13,9 @@
 
 # OpenID認証情報
 class OpenIdCredential < ActiveRecord::Base
+
+  untranslate :created_at, :user_id
+
   MaximumRecordsPerUser = 10
 
   belongs_to :user, :class_name => MultiAuth.user_model, :foreign_key => 'user_id'

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # == Schema Information
 # Schema version: 20090529051529
 #
@@ -12,6 +13,9 @@
 
 # セッション
 class Session < ActiveRecord::Base
+
+  untranslate_all
+
   def self.cleanup(seconds)
     self.delete_all(["(sessions.updated_at < ?)", Time.now - seconds])
     return nil

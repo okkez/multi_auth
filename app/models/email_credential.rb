@@ -16,6 +16,9 @@
 
 # メール認証情報
 class EmailCredential < ActiveRecord::Base
+
+  untranslate  :created_at, :user_id, :hashed_password
+
   EmailMaximumLength = 200
   TokenLength  = 20
   TokenPattern = TokenUtil.create_token_regexp(TokenLength)
