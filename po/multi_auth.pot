@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: multi_auth 1.0.0\n"
-"POT-Creation-Date: 2009-11-08 22:38+0900\n"
+"POT-Creation-Date: 2010-01-04 21:29+0900\n"
 "PO-Revision-Date: 2009-11-08 22:38+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,84 +32,8 @@ msgstr ""
 msgid "OpenIdLoginForm|Openid url"
 msgstr ""
 
-#: app/models/user.rb:-
-msgid "open id authentication association"
-msgstr ""
-
-#: app/models/user.rb:-
-msgid "openidauthentication::association"
-msgstr ""
-
-#: app/models/user.rb:-
-msgid "OpenIdAuthentication::Association|Issued"
-msgstr ""
-
-#: app/models/user.rb:-
-msgid "OpenIdAuthentication::Association|Lifetime"
-msgstr ""
-
-#: app/models/user.rb:-
-msgid "OpenIdAuthentication::Association|Handle"
-msgstr ""
-
-#: app/models/user.rb:-
-msgid "OpenIdAuthentication::Association|Assoc type"
-msgstr ""
-
-#: app/models/user.rb:-
-msgid "OpenIdAuthentication::Association|Server url"
-msgstr ""
-
-#: app/models/user.rb:-
-msgid "OpenIdAuthentication::Association|Secret"
-msgstr ""
-
-#: app/models/user.rb:-
-msgid "open id authentication nonce"
-msgstr ""
-
-#: app/models/user.rb:-
-msgid "openidauthentication::nonce"
-msgstr ""
-
-#: app/models/user.rb:-
-msgid "OpenIdAuthentication::Nonce|Timestamp"
-msgstr ""
-
-#: app/models/user.rb:-
-msgid "OpenIdAuthentication::Nonce|Server url"
-msgstr ""
-
-#: app/models/user.rb:-
-msgid "OpenIdAuthentication::Nonce|Salt"
-msgstr ""
-
-#: app/models/user.rb:-
-msgid "user"
-msgstr ""
-
-#: app/models/user.rb:-
-msgid "User|Created at"
-msgstr ""
-
-#: app/models/user.rb:-
-msgid "User|Updated at"
-msgstr ""
-
-#: app/models/user.rb:-
-msgid "User|User token"
-msgstr ""
-
-#: app/models/user.rb:-
-msgid "User|Nickname"
-msgstr ""
-
 #: app/models/email_credential.rb:-
 msgid "email credential"
-msgstr ""
-
-#: app/models/email_credential.rb:-
-msgid "EmailCredential|Created at"
 msgstr ""
 
 #: app/models/email_credential.rb:-
@@ -117,15 +41,7 @@ msgid "EmailCredential|Activation token"
 msgstr ""
 
 #: app/models/email_credential.rb:-
-msgid "EmailCredential|User"
-msgstr ""
-
-#: app/models/email_credential.rb:-
 msgid "EmailCredential|Email"
-msgstr ""
-
-#: app/models/email_credential.rb:-
-msgid "EmailCredential|Hashed password"
 msgstr ""
 
 #: app/models/email_credential.rb:-
@@ -136,36 +52,8 @@ msgstr ""
 msgid "EmailCredential|Loggedin at"
 msgstr ""
 
-#: app/models/session.rb:-
-msgid "session"
-msgstr ""
-
-#: app/models/session.rb:-
-msgid "Session|Created at"
-msgstr ""
-
-#: app/models/session.rb:-
-msgid "Session|Updated at"
-msgstr ""
-
-#: app/models/session.rb:-
-msgid "Session|Session"
-msgstr ""
-
-#: app/models/session.rb:-
-msgid "Session|Data"
-msgstr ""
-
 #: app/models/open_id_credential.rb:-
 msgid "open id credential"
-msgstr ""
-
-#: app/models/open_id_credential.rb:-
-msgid "OpenIdCredential|Created at"
-msgstr ""
-
-#: app/models/open_id_credential.rb:-
-msgid "OpenIdCredential|User"
 msgstr ""
 
 #: app/models/open_id_credential.rb:-
