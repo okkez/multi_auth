@@ -4,12 +4,14 @@ module NavigationHelpers
   #
   #   When /^I go to (.+)$/ do |page_name|
   #
-  # step definition in webrat_steps.rb
+  # step definition in web_steps.rb
   #
   # TODO 日本語でパスの定義を書く
   def path_to(page_name)
     case page_name
     when /\Aダッシュボード\z/, /\Aホームページ\z/
+      '/'
+    when /the home\s?page/
       '/'
     when /\Aメールアドレスによるサインアップ\z/
       url_for(:controller => 'signup/email', :action => 'index')
@@ -24,9 +26,8 @@ module NavigationHelpers
     when /the new signup page/
       new_signup_path
 
-    
     # Add more mappings here.
-    # Here is a more fancy example:
+    # Here is an example that pulls values out of the Regexp:
     #
     #   when /^(.*)'s profile page$/i
     #     user_profile_path(User.find_by_login($1))

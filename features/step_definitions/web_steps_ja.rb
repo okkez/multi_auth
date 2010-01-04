@@ -110,11 +110,11 @@ Then /^"([^\"]*)" と表示されていないこと$/ do |text|
 end
 
 Then /^"([^\"]*)" に "([^\"]*)" が含まれていること$/ do |field, value|
-      assert_match(/#{value}/, field_labeled(field).value)
-  end
+  assert_match(/#{value}/, field_labeled(field).value)
+end
 
 Then /^"([^\"]*)" に "([^\"]*)" が含まれていないこと$/ do |field, value|
-      assert_no_match(/#{value}/, field_labeled(field).value)
+  assert_no_match(/#{value}/, field_labeled(field).value)
 end
 
 Then /^"([^\"]*)" がチェックされていること$/ do |label|

@@ -1,3 +1,4 @@
+# language: ja
 フィーチャー: ユーザ管理
   ユーザの追加、削除などを行う
   ユーザを追加したり削除したりする
@@ -22,9 +23,9 @@
   シナリオ: 新規ユーザ登録 email
     前提 言語は "ja"
     かつ "メールアドレスによるサインアップ" にアクセスしている
-    もし "Email" に "quentin@example.com" と入力する
-    かつ "Password" に "monkey" と入力する
-    かつ "Password confirmation" に "monkey" と入力する
+    もし "メールアドレス" に "quentin@example.com" と入力する
+    かつ "パスワード" に "monkey" と入力する
+    かつ "signup_form_password_confirmation" に "monkey" と入力する
     かつ "確認画面へ" ボタンをクリックする
     ならば "登録確認" と表示されていること
     かつ "quentin@example.com" と表示されていること
@@ -35,9 +36,9 @@
     もし "本登録" ボタンをクリックする
     ならば "本登録完了" と表示されていること
     もし "ログインする" リンクをクリックする
-    ならば "メールアドレスによるログイン" と表示されていること
-    もし "Email" に "quentin@example.com" と入力する
-    かつ "Password" に "monkey" と入力する
+    ならば "ログイン" と表示されていること
+    もし "メールアドレス" に "quentin@example.com" と入力する
+    かつ "パスワード" に "monkey" と入力する
     かつ "ログイン" ボタンをクリックする
     # ならば
 
