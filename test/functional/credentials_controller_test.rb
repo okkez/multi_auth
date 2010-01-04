@@ -46,4 +46,13 @@ class CredentialsControllerTest < ActionController::TestCase
     assert_redirected_to(root_path)
     assert_flash_error
   end
+
+  test "GET index, session expired" do
+    session[:expires_at] = Time.now - 1
+
+    get :index
+
+    assert_response(:success)
+    assert_flash_error
+  end
 end

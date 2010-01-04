@@ -55,6 +55,20 @@ You can use default style sheet and icons.
   $ ruby script/generate multi_auth_public_assets
 
 
+Settings
+========
+
+You can config in RAILS_ROOT/config/initializers/*.rb
+
+Ex.
+
+  MultiAuth.setup do |s|
+    s.application_name = 'Your app name'
+    s.from_address = 'yourname@example.com'
+    s.user_model = 'YourUserModel'
+    s.session_times_out_in = 1.hour
+  end
+
 Customize
 =========
 

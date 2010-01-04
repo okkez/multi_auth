@@ -19,6 +19,16 @@ module MultiAuth
       end
 
       def authentication_required
+        if session[:expires_at]
+          if session_expired?
+            logger.info "[MultiAuth] Session has expired, resetting session"
+            reset_login_session
+            set_error("Session has expired. Please login again.")
+            return false
+          end
+          update_session_expiry
+        end
+
         if @login_user
           return true
         else
@@ -26,6 +36,19 @@ module MultiAuth
           redirect_to(root_path)
           return false
         end
+      end
+
+      def update_session_expiry
+        return unless MultiAuth.session_times_out_in
+        session[:expires_at] = Time.now + MultiAuth.session_times_out_in
+      end
+
+      def session_expired?
+        Time.now > session[:expires_at]
+      end
+
+      def reset_login_session
+        session[:user_id] = nil
       end
 
       def set_notice(message)
