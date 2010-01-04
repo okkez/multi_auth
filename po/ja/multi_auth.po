@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: multi_auth 1.0.0\n"
 "POT-Creation-Date: 2009-11-08 22:38+0900\n"
-"PO-Revision-Date: 2009-11-08 22:39+0900\n"
+"PO-Revision-Date: 2010-01-04 17:11+0900\n"
 "Last-Translator: okkez <okkez000@gmail.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -18,11 +18,11 @@ msgstr ""
 
 #: app/models/email_credential_edit_form.rb:21
 msgid "EmailCredentialEditForm|Email"
-msgstr ""
+msgstr "メールアドレス"
 
 #: app/models/email_credential_edit_form.rb:22
 msgid "EmailCredentialEditForm|Password"
-msgstr ""
+msgstr "パスワード"
 
 #: app/models/email_credential_edit_form.rb:23
 msgid "EmailCredentialEditForm|Password confirmation"
@@ -122,7 +122,7 @@ msgstr ""
 
 #: app/models/email_credential.rb:-
 msgid "EmailCredential|Email"
-msgstr ""
+msgstr "メールアドレス"
 
 #: app/models/email_credential.rb:-
 msgid "EmailCredential|Hashed password"
@@ -178,15 +178,15 @@ msgstr ""
 
 #: app/models/email_login_form.rb:15
 msgid "EmailLoginForm|Email"
-msgstr ""
+msgstr "メールアドレス"
 
 #: app/models/email_login_form.rb:16
 msgid "EmailLoginForm|Password"
-msgstr ""
+msgstr "パスワード"
 
 #: app/models/email_password_edit_form.rb:15
 msgid "EmailPasswordEditForm|Password"
-msgstr ""
+msgstr "パスワード"
 
 #: app/models/email_password_edit_form.rb:16
 msgid "EmailPasswordEditForm|Password confirmation"
