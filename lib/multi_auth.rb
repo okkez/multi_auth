@@ -15,6 +15,10 @@ module MultiAuth
   def self.user_model_class
     user_model.constantize
   end
+
+  def self.root
+    Pathname.new(File.join(File.dirname(__FILE__), '../'))
+  end
 end
 
 require 'multi_auth/action_controller'
