@@ -11,6 +11,14 @@ module MultiAuth
       end
     end
     module InstanceMethods
+
+      def self.included(base)
+        base.class_eval{
+          init_gettext("multi_auth",
+                       :locale_path => MultiAuth.root + 'locale')
+        }
+      end
+
       private
 
       def authentication(user_id = session[:user_id])

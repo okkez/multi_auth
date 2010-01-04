@@ -2,6 +2,7 @@
 namespace :gettext do
   desc "Update pot/po files."
   task :po do
+    require 'gettext_rails'
     require "gettext_rails/tools"
     untranslate_classes = ["OpenIdAuthentication::Association",
                            "OpenIdAuthentication::Nonce",
