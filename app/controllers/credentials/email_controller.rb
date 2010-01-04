@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 # メール認証情報コントローラ
 class Credentials::EmailController < ApplicationController
@@ -37,12 +38,12 @@ class Credentials::EmailController < ApplicationController
         :recipients     => @email_credential.email,
         :activation_url => @activation_url)
 
-      set_notice("メール認証情報を追加しました。")
+      set_notice(p_("MultiAuth", "Email authentication credential was successfully added."))
       redirect_to(:action => "created", :email_credential_id => @email_credential.id)
     else
       @edit_form.password              = nil
       @edit_form.password_confirmation = nil
-      set_error_now("入力内容を確認してください。")
+      set_error_now(p_("MultiAuth", "Please confirm your input."))
       render(:action => "new")
     end
   end
@@ -64,12 +65,12 @@ class Credentials::EmailController < ApplicationController
     @email_credential.attributes = @edit_form.to_email_credential_hash
 
     if @edit_form.valid? && @email_credential.save
-      set_notice("パスワードを変更しました。")
+      set_notice(p_("MultiAuth", "Password was changed."))
       redirect_to(:controller => "/credentials")
     else
       @edit_form.password              = nil
       @edit_form.password_confirmation = nil
-      set_error_now("入力内容を確認してください。")
+      set_error_now(p_("MultiAuth", "Please confirm your input."))
       render(:action => "edit_password")
     end
   end
@@ -83,7 +84,7 @@ class Credentials::EmailController < ApplicationController
   def destroy
     @email_credential.destroy
 
-    set_notice("メール認証情報を削除しました。")
+    set_notice(p_("MultiAuth", "Email authentication credential was successfully deleted."))
     redirect_to(:controller => "/credentials")
   end
 
@@ -117,7 +118,7 @@ class Credentials::EmailController < ApplicationController
     if @email_credential
       return true
     else
-      set_error("メール認証情報IDが正しくありません。")
+      set_error(p_("MultiAuth", "It is invalid email authentication credential."))
       redirect_to(root_path)
       return false
     end
@@ -127,7 +128,7 @@ class Credentials::EmailController < ApplicationController
     if @email_credential.user_id == @login_user.id
       return true
     else
-      set_error("メール認証情報IDが正しくありません。")
+      set_error(p_("MultiAuth", "It is invalid email authentication credential."))
       redirect_to(root_path)
       return false
     end
@@ -138,7 +139,7 @@ class Credentials::EmailController < ApplicationController
     if @email_credential
       return true
     else
-      set_error("アクティベーショントークンが正しくありません。")
+      set_error(p_("MultiAuth", "It is invalid activation token."))
       redirect_to(root_path)
       return false
     end
@@ -146,7 +147,7 @@ class Credentials::EmailController < ApplicationController
 
   def only_inactive_email_credential
     if @email_credential.activated?
-      set_error("既にアクティベーションされています。")
+      set_error(p_("MultiAuth", "This email authentication credential has been already activated."))
       redirect_to(root_path)
       return false
     else

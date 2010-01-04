@@ -31,7 +31,7 @@ module MultiAuth
           if session_expired?
             logger.info "[MultiAuth] Session has expired, resetting session"
             reset_login_session
-            set_error("Session has expired. Please login again.")
+            set_error(p_("MultiAuth", "Session has expired. Please login again."))
             return false
           end
           update_session_expiry
@@ -40,7 +40,7 @@ module MultiAuth
         if @login_user
           return true
         else
-          set_error("ログインが必要です。")
+          set_error(p_("MultiAuth", "Login required."))
           redirect_to(root_path)
           return false
         end

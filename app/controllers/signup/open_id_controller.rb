@@ -22,7 +22,9 @@ class Signup::OpenIdController < ApplicationController
     authenticate_with_open_id(@openid_url) { |result, identity_url, sreg|
       if result.successful?
         if OpenIdCredential.exists?(:identity_url => identity_url)
-          failed["指定されたOpenIDは既に登録されているため、利用できません。"]
+          failed[p_("MultiAuth",
+                    "Because specified OpenID has already been registered, " +
+                    "it is not possible to use it. ")]
         else
           session[:identity_url] = identity_url
           redirect_to(:action => "authenticated")

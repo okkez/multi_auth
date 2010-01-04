@@ -24,7 +24,7 @@ class Signup::EmailController < ApplicationController
     else
       @signup_form.password              = nil
       @signup_form.password_confirmation = nil
-      set_error_now("入力内容を確認してください。")
+      set_error_now(p_("MultiAuth", "Please confirm your input."))
       render(:action => "index")
     end
   end
@@ -36,7 +36,7 @@ class Signup::EmailController < ApplicationController
     if @signup_form.valid?
       render
     else
-      set_error_now("入力内容を確認してください。")
+      set_error_now(p_("MultiAuth", "Please confirm your input."))
       render(:action => "index")
     end
   end
@@ -64,7 +64,7 @@ class Signup::EmailController < ApplicationController
 
       redirect_to(:action => "created")
     else
-      set_error_now("入力内容を確認してください。")
+      set_error_now(p_("MultiAuth", "Please confirm your input."))
       render(:action => "index")
     end
   end
@@ -90,13 +90,13 @@ class Signup::EmailController < ApplicationController
     @credential = EmailCredential.find_by_activation_token(params[:activation_token])
 
     unless @credential
-      set_error("無効なアクティベーションキーです。")
+      set_error(p_("MultiAuth", "It is an invalid activation key."))
       redirect_to(root_path)
       return
     end
 
     if @credential.activated?
-      set_error("既に本登録されています。")
+      set_error(p_("MultiAuth", "This email address has been already registered."))
       redirect_to(root_path)
       return
     end

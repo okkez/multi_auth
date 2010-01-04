@@ -7,14 +7,71 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: multi_auth 1.0.0\n"
-"POT-Creation-Date: 2010-01-04 21:29+0900\n"
-"PO-Revision-Date: 2010-01-04 21:35+0900\n"
+"POT-Creation-Date: 2010-01-05 01:54+0900\n"
+"PO-Revision-Date: 2010-01-05 01:57+0900\n"
 "Last-Translator: okkez <okkez000@gmail.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: app/controllers/credentials/email_controller.rb:41
+msgctxt "MultiAuth"
+msgid "Email authentication credential was successfully added."
+msgstr "メール認証情報を追加しました。"
+
+#: app/controllers/credentials/email_controller.rb:46
+#: app/controllers/credentials/email_controller.rb:73
+#: app/controllers/signup/email_controller.rb:27
+#: app/controllers/signup/email_controller.rb:39
+#: app/controllers/signup/email_controller.rb:67
+msgctxt "MultiAuth"
+msgid "Please confirm your input."
+msgstr "入力内容を確認してください。"
+
+#: app/controllers/credentials/email_controller.rb:68
+msgctxt "MultiAuth"
+msgid "Password was changed."
+msgstr "パスワードを変更しました。"
+
+#: app/controllers/credentials/email_controller.rb:87
+msgctxt "MultiAuth"
+msgid "Email authentication credential was successfully deleted."
+msgstr "メール認証情報を削除しました。"
+
+#: app/controllers/credentials/email_controller.rb:121
+#: app/controllers/credentials/email_controller.rb:131
+msgctxt "MultiAuth"
+msgid "It is invalid email authentication credential."
+msgstr "メール認証情報が正しくありません。"
+
+#: app/controllers/credentials/email_controller.rb:142
+msgctxt "MultiAuth"
+msgid "It is invalid activation token."
+msgstr "無効なアクティベーションキーです。"
+
+#: app/controllers/credentials/email_controller.rb:150
+msgctxt "MultiAuth"
+msgid "This email authentication credential has been already activated."
+msgstr "このメール認証情報は既に有効になっています。"
+
+#: app/controllers/signup/email_controller.rb:93
+msgctxt "MultiAuth"
+msgid "It is an invalid activation key."
+msgstr "無効なアクティベーションキーです。"
+
+#: app/controllers/signup/email_controller.rb:99
+msgctxt "MultiAuth"
+msgid "This email address has been already registered."
+msgstr "このメールアドレスは既に本登録されています。"
+
+#: app/controllers/signup/open_id_controller.rb:25
+msgctxt "MultiAuth"
+msgid ""
+"Because specified OpenID has already been registered, it is not possible to "
+"use it. "
+msgstr "指定された OpenID は既に登録されているため、利用できません。"
 
 #: app/models/email_credential_edit_form.rb:21
 msgid "EmailCredentialEditForm|Email"
@@ -79,3 +136,17 @@ msgstr "パスワード"
 #: app/models/email_password_edit_form.rb:16
 msgid "EmailPasswordEditForm|Password confirmation"
 msgstr "パスワード (確認)"
+
+#: lib/multi_auth/action_controller.rb:34
+msgctxt "MultiAuth"
+msgid "Session has expired. Please login again."
+msgstr "セッションがタイムアウトしました。再度ログインしてください。"
+
+#: lib/multi_auth/action_controller.rb:43
+msgctxt "MultiAuth"
+msgid "Login required."
+msgstr "ログインが必要です。"
+
+#~ msgctxt "MultiAuth"
+#~ msgid "It is invalid Email authentication credential."
+#~ msgstr "メール認証情報が正しくありません。"
