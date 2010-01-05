@@ -1,27 +1,27 @@
 
-<%- @title = "サインアップ" -%>
+<%- @title = p_("MultiAuth", "Signup") -%>
 
-<h1>本登録確認</h1>
+<h1><%=h p_("MultiAuth", "Registration confirmation") %></h1>
 
 <%= render(:partial => "progress", :locals => {:step => 4}) %>
 
 <%- if @credential -%>
- <div>有効なアクティベーションキー</div>
+ <div><%=h p_("MultiAuth", "Valid activation token") %></div>
  <%- if @activated -%>
-  <div>アクティベート済み</div>
+  <div><%=h p_("MultiAuth", "Activated") %></div>
  <%- else -%>
-  <div>未アクティベート</div>
+  <div><%=h p_("MultiAuth", "Inactivated") %></div>
   <table>
     <tr>
-      <th>メールアドレス</th>
+      <th><%=h s_("EmailCredential|Email") %></th>
       <td><%=h @credential.email %></td>
     </tr>
   </table>
   <%- form_tag(:action => "activate") { -%>
    <%= hidden_field_tag("activation_token", @credential.activation_token) %>
-   <%= submit_tag("本登録") %>
+   <%= submit_tag(p_("MultiAuth", "Regist")) %>
   <%- } -%>
  <%- end -%>
 <%- else -%>
- <div>無効なアクティベーションキー</div>
+ <div><%=h p_("MultiAuth", "Invalid activation token") %></div>
 <%- end -%>

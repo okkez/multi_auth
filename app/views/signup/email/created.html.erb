@@ -1,14 +1,16 @@
 
-<%- @title = "サインアップ" -%>
+<%- @title = P_("MultiAuth", "Signup") -%>
 
-<h1>仮登録完了</h1>
+<h1><%=h p_("MultiAuth", "Pre-registration completed") %></h1>
 
 <%= render(:partial => "progress", :locals => {:step => 3}) %>
 
-<%=h @signup_form.email %>宛にメールを送信しました。
+<p>
+  <%=h p_("MultiAuth", "Sent a mail to %{email}." % { :email => @signup_form.email } ) %>
+</p>
 
 <%- unless production? -%>
   <div class="debug">
-    <%= link_to(h("アクティベーション"), :action => "activation", :activation_token => @credential.activation_token) %>
+    <%= link_to(h("Activation"), :action => "activation", :activation_token => @credential.activation_token) %>
   </div>
 <%- end -%>

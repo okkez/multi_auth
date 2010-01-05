@@ -1,7 +1,7 @@
 
-<%- @title = "サインアップ" -%>
+<%- @title = p_("MultiAuth", "Signup") -%>
 
-<h1>サインアップ</h1>
+<h1><%=h @title %></h1>
 
 <%- form_tag(:action => "authenticate") { -%>
   <table>
@@ -12,5 +12,5 @@
       </td>
     </tr>
   </table>
-  <div><%= submit_tag("次へ") %></div>
+  <div><%= submit_tag(p_("MultiAuth", "Next")) %></div>
 <%- } -%>

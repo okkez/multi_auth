@@ -1,9 +1,9 @@
 
-<%- @title = "サインアップ" -%>
+<%- @title = p_("MultiAuth", "Signup") -%>
 
-<h1>本登録完了</h1>
+<h1><%=h p_("MultiAuth", "Registration completed") %></h1>
 
 <%= render(:partial => "progress", :locals => {:step => 5}) %>
 
-<div>登録が完了しました。</div>
-<div><%= link_to(h("ログインする"), :controller => "auth/email") %></div>
+<div><%=h p_("MultiAuth", "Registration completed") %></div>
+<div><%= link_to(h(p_("MultiAuth", "Login")), :controller => "auth/email") %></div>

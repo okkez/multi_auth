@@ -27,7 +27,7 @@ class Auth::EmailController < ApplicationController
       redirect_to(:controller => "/auth", :action => "logged_in")
     else
       @login_form.password = nil
-      set_error_now("メールアドレス、またはパスワードが違います。")
+      set_error_now(p_("MultiAuth", "The email address or the password is wrong."))
       render(:action => "index")
     end
   end

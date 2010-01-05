@@ -1,7 +1,7 @@
 
-<%- @title = "サインアップ" -%>
+<%- @title = p_("MultiAuth", "Signup") -%>
 
-<h1>メールアドレスによるサインアップ</h1>
+<h1><%=h p_("MultiAuth", "Signup by email address") %></h1>
 
 <%= render(:partial => "progress", :locals => {:step => 1}) %>
 
@@ -24,7 +24,7 @@
       </td>
     </tr>
   </table>
- <div><%= submit_tag("確認画面へ") %></div>
+ <div><%= submit_tag(p_("MultiAuth", "Confirm")) %></div>
 <%- } -%>
 
 <%- unless production? -%>

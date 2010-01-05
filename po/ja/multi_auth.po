@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: multi_auth 1.0.0\n"
-"POT-Creation-Date: 2010-01-05 01:54+0900\n"
-"PO-Revision-Date: 2010-01-05 01:57+0900\n"
+"POT-Creation-Date: 2010-01-05 17:00+0900\n"
+"PO-Revision-Date: 2010-01-05 17:01+0900\n"
 "Last-Translator: okkez <okkez000@gmail.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -23,6 +23,7 @@ msgstr "メール認証情報を追加しました。"
 
 #: app/controllers/credentials/email_controller.rb:46
 #: app/controllers/credentials/email_controller.rb:73
+#: app/controllers/credentials/open_id_controller.rb:22
 #: app/controllers/signup/email_controller.rb:27
 #: app/controllers/signup/email_controller.rb:39
 #: app/controllers/signup/email_controller.rb:67
@@ -55,6 +56,43 @@ msgstr "無効なアクティベーションキーです。"
 msgctxt "MultiAuth"
 msgid "This email authentication credential has been already activated."
 msgstr "このメール認証情報は既に有効になっています。"
+
+#: app/controllers/credentials/open_id_controller.rb:37
+msgctxt "MultiAuth"
+msgid "OpenID authentication credential was successfully added."
+msgstr "OpenID 認証情報を追加しました。"
+
+#: app/controllers/credentials/open_id_controller.rb:41
+msgctxt "MultiAuth"
+msgid "This OpenID has been already registered."
+msgstr "この OpenID は既に本登録されています。"
+
+#: app/controllers/credentials/open_id_controller.rb:61
+msgctxt "MultiAuth"
+msgid "OpenID authentication credential was successfully deleted."
+msgstr "OpenID 認証情報を削除しました。"
+
+#: app/controllers/credentials/open_id_controller.rb:74
+#: app/controllers/credentials/open_id_controller.rb:85
+msgctxt "MultiAuth"
+msgid "It is invalid OpenID authentication credential."
+msgstr "OpenID 認証情報が正しくありません。"
+
+#: app/controllers/auth/email_controller.rb:30
+msgctxt "MultiAuth"
+msgid "The email address or the password is wrong."
+msgstr "メールアドレスかパスワードが間違っています。"
+
+#: app/controllers/auth/open_id_controller.rb:24
+#: app/views/auth/logged_in.html.erb:2
+msgctxt "MultiAuth"
+msgid "Logged in successfully."
+msgstr "ログインしました。"
+
+#: app/controllers/auth/open_id_controller.rb:27
+msgctxt "MultiAuth"
+msgid "This OpenID has not been registered yet."
+msgstr "この OpenID はまだ登録されていません。"
 
 #: app/controllers/signup/email_controller.rb:93
 msgctxt "MultiAuth"
@@ -97,17 +135,25 @@ msgstr ""
 msgid "EmailCredential|Activation token"
 msgstr ""
 
-#: app/models/email_credential.rb:-
+#: app/models/email_credential.rb:- app/views/credentials/index.html.erb:50
+#: app/views/credentials/email/delete.html.erb:13
+#: app/views/credentials/email/activation.html.erb:8
+#: app/views/signup/email/validated.html.erb:10
+#: app/views/signup/email/activation.html.erb:16
 msgid "EmailCredential|Email"
 msgstr "メールアドレス"
 
 #: app/models/email_credential.rb:-
 msgid "EmailCredential|Activated at"
-msgstr ""
+msgstr "登録日時"
 
-#: app/models/email_credential.rb:-
+#: app/models/email_credential.rb:- app/views/credentials/index.html.erb:49
 msgid "EmailCredential|Loggedin at"
-msgstr "ログイン日時"
+msgstr "最終ログイン日時"
+
+#: app/models/email_credential.rb:22 app/views/credentials/index.html.erb:48
+msgid "EmailCredential|Activated on"
+msgstr "登録日時"
 
 #: app/models/open_id_credential.rb:-
 msgid "open id credential"
@@ -117,9 +163,13 @@ msgstr ""
 msgid "OpenIdCredential|Identity url"
 msgstr ""
 
-#: app/models/open_id_credential.rb:-
+#: app/models/open_id_credential.rb:- app/views/credentials/index.html.erb:10
 msgid "OpenIdCredential|Loggedin at"
 msgstr "ログイン日時"
+
+#: app/models/open_id_credential.rb:19 app/views/credentials/index.html.erb:9
+msgid "OpenIdCredential|Activated on"
+msgstr "登録日時"
 
 #: app/models/email_login_form.rb:15
 msgid "EmailLoginForm|Email"
@@ -137,6 +187,325 @@ msgstr "パスワード"
 msgid "EmailPasswordEditForm|Password confirmation"
 msgstr "パスワード (確認)"
 
+#: app/views/credentials/index.html.erb:2
+msgctxt "MultiAuth"
+msgid "Login setting"
+msgstr "ログイン設定"
+
+#: app/views/credentials/index.html.erb:4
+msgctxt "MultiAuth"
+msgid "OpenID authentication"
+msgstr "OpenID 認証"
+
+#: app/views/credentials/index.html.erb:19
+msgctxt "MultiAuth"
+msgid "Add OpenID authentication"
+msgstr "OpenID 認証情報を追加"
+
+#: app/views/credentials/index.html.erb:27
+msgctxt "MultiAuth"
+msgid "There are no OpenID authentication."
+msgstr "OpenID 認証情報が登録されていません。"
+
+#: app/views/credentials/index.html.erb:36
+#: app/views/credentials/index.html.erb:81
+#: app/views/credentials/open_id/delete.html.erb:19
+#: app/views/credentials/email/delete.html.erb:19
+msgctxt "MultiAuth"
+msgid "Delete"
+msgstr "削除"
+
+#: app/views/credentials/index.html.erb:43
+msgctxt "MultiAuth"
+msgid "Email address authentication"
+msgstr "メールアドレス認証情報"
+
+#: app/views/credentials/index.html.erb:58
+msgctxt "MultiAuth"
+msgid "Add email address authentication"
+msgstr "メールアドレス認証情報を追加"
+
+#: app/views/credentials/index.html.erb:66
+msgctxt "MultiAuth"
+msgid "There are no email address authentication."
+msgstr "メールアドレス認証情報が登録されていません。"
+
+#: app/views/credentials/index.html.erb:77
+msgctxt "MultiAuth"
+msgid "Waiting for activation"
+msgstr "アクティベーション待ち"
+
+#: app/views/credentials/index.html.erb:80
+#: app/views/credentials/email/edit_password.html.erb:2
+msgctxt "MultiAuth"
+msgid "Update password"
+msgstr "パスワード変更"
+
+#: app/views/credentials/open_id/delete.html.erb:2
+#: app/views/credentials/open_id/delete.html.erb:7
+msgctxt "MultiAuth"
+msgid "Delete OpenID authentication credential."
+msgstr "OpenID 認証情報を削除する。"
+
+#: app/views/credentials/open_id/delete.html.erb:8
+#: app/views/credentials/email/delete.html.erb:8
+msgctxt "MultiAuth"
+msgid "Are you sure?"
+msgstr "よろしいですか？"
+
+#: app/views/credentials/open_id/new.html.erb:2
+msgctxt "MultiAuth"
+msgid "Add OpenID authentication credential"
+msgstr "OpenID 認証情報を追加"
+
+#: app/views/credentials/open_id/new.html.erb:16
+#: app/views/credentials/email/new.html.erb:25
+msgctxt "MultiAuth"
+msgid "Add"
+msgstr "追加"
+
+#: app/views/credentials/email/edit_password.html.erb:21
+msgctxt "MultiAuth"
+msgid "Update"
+msgstr "更新"
+
+#: app/views/credentials/email/activated.html.erb:2
+#: app/views/signup/open_id/created.html.erb:4
+#: app/views/signup/email/_progress.html.erb:13
+#: app/views/signup/email/activated.html.erb:4
+#: app/views/signup/email/activated.html.erb:8
+msgctxt "MultiAuth"
+msgid "Registration completed"
+msgstr "登録完了"
+
+#: app/views/credentials/email/activated.html.erb:6
+msgctxt "MultiAuth"
+msgid "Top"
+msgstr "トップ"
+
+#: app/views/credentials/email/delete.html.erb:2
+#: app/views/credentials/email/delete.html.erb:7
+msgctxt "MultiAuth"
+msgid "Delete email authentication credential."
+msgstr "メール認証情報を削除する。"
+
+#: app/views/credentials/email/new.html.erb:2
+msgctxt "MultiAuth"
+msgid "Add email authentication credential"
+msgstr "メール認証情報を追加"
+
+#: app/views/credentials/email/created.html.erb:2
+msgctxt "MultiAuth"
+msgid "Pre-registeration completed"
+msgstr "仮登録完了"
+
+#: app/views/credentials/email/created.html.erb:6
+msgctxt "MultiAuth"
+msgid ""
+"System sent a mail to email address you specified. Please access the URL "
+"described in the mail. And complete registration."
+msgstr ""
+"指定されたメールアドレスにメールを送信しました。\n"
+"メールに記載してある URL にアクセスして登録を完了してください。"
+
+#: app/views/credentials/email/created.html.erb:7
+msgctxt "MultiAuth"
+msgid "Back"
+msgstr "戻る"
+
+#: app/views/credentials/email/activation.html.erb:2
+msgctxt "MultiAuth"
+msgid "Activation"
+msgstr "アクティベーション"
+
+#: app/views/credentials/email/activation.html.erb:14
+msgctxt "MultiAuth"
+msgid "Activate"
+msgstr "アクティベーションする"
+
+#: app/views/auth/logged_out.html.erb:2
+msgctxt "MultiAuth"
+msgid "You have been logged out."
+msgstr "ログアウトしました。"
+
+#: app/views/auth/logged_out.html.erb:21 app/views/auth/logged_in.html.erb:21
+msgctxt "MultiAuth"
+msgid "Please click %{link} when the page doesn't change."
+msgstr "ページが切り替わらない場合は %{link} をクリックしてください。"
+
+#: app/views/auth/index.html.erb:1 app/views/auth/index.html.erb:16
+#: app/views/auth/index.html.erb:39 app/views/auth/open_id/index.html.erb:2
+#: app/views/auth/open_id/index.html.erb:17
+#: app/views/auth/email/index.html.erb:2
+#: app/views/auth/email/index.html.erb:64
+#: app/views/auth/email/index.html.erb:82
+#: app/views/signup/open_id/created.html.erb:6
+#: app/views/signup/email/activated.html.erb:9
+msgctxt "MultiAuth"
+msgid "Login"
+msgstr "ログイン"
+
+#: app/views/auth/index.html.erb:5
+msgctxt "MultiAuth"
+msgid "By OpenID"
+msgstr "OpenID によるログイン"
+
+#: app/views/auth/index.html.erb:21
+msgctxt "MultiAuth"
+msgid "By email address"
+msgstr "メールアドレスによるログイン"
+
+#: app/views/signup/index.html.erb:2
+msgctxt "MultiAuth"
+msgid "Register your account"
+msgstr "アカウント登録"
+
+#: app/views/signup/index.html.erb:5
+msgctxt "MultiAuth"
+msgid "Let's start %{app}!"
+msgstr "さあ、 %{app} をはじめよう！"
+
+#: app/views/signup/index.html.erb:7
+msgctxt "MultiAuth"
+msgid "Registration is very easy."
+msgstr "アカウント登録はとても簡単"
+
+#: app/views/signup/index.html.erb:11
+msgctxt "MultiAuth"
+msgid "Register by OpenID!"
+msgstr "OpenID による登録"
+
+#: app/views/signup/index.html.erb:13
+msgctxt "MultiAuth"
+msgid "Input OpenID"
+msgstr "OpenID を入力"
+
+#: app/views/signup/index.html.erb:14
+msgctxt "MultiAuth"
+msgid "OpenID Authentication"
+msgstr "OpenID 認証"
+
+#: app/views/signup/index.html.erb:15 app/views/signup/index.html.erb:35
+#: app/views/signup/index.html.erb:37
+msgctxt "MultiAuth"
+msgid "Confirmation"
+msgstr "確認"
+
+#: app/views/signup/index.html.erb:16 app/views/signup/index.html.erb:38
+msgctxt "MultiAuth"
+msgid "Registration completed!"
+msgstr "登録完了"
+
+#: app/views/signup/index.html.erb:28
+#: app/views/signup/open_id/index.html.erb:15
+msgctxt "MultiAuth"
+msgid "Next"
+msgstr "次へ"
+
+#: app/views/signup/index.html.erb:32
+msgctxt "MultiAuth"
+msgid "Register by email address"
+msgstr "メールアドレスによる登録"
+
+#: app/views/signup/index.html.erb:34
+msgctxt "MultiAuth"
+msgid "Input email address and password"
+msgstr "メールアドレスとパスワードを入力"
+
+#: app/views/signup/index.html.erb:36
+msgctxt "MultiAuth"
+msgid "Recieve confirmation mail"
+msgstr "確認メールを受信"
+
+#: app/views/signup/index.html.erb:60 app/views/signup/email/index.html.erb:27
+msgctxt "MultiAuth"
+msgid "Confirm"
+msgstr "確認"
+
+#: app/views/signup/open_id/authenticated.html.erb:2
+#: app/views/signup/open_id/index.html.erb:2
+#: app/views/signup/open_id/created.html.erb:2
+#: app/views/signup/email/activated.html.erb:2
+#: app/views/signup/email/index.html.erb:2
+#: app/views/signup/email/validated.html.erb:2
+#: app/views/signup/email/activation.html.erb:2
+msgctxt "MultiAuth"
+msgid "Signup"
+msgstr "サインアップ"
+
+#: app/views/signup/open_id/authenticated.html.erb:4
+msgctxt "MultiAuth"
+msgid "Authentication completed"
+msgstr "認証完了"
+
+#: app/views/signup/open_id/authenticated.html.erb:14
+#: app/views/signup/email/validated.html.erb:20
+msgctxt "MultiAuth"
+msgid "Register"
+msgstr "登録"
+
+#: app/views/signup/email/_progress.html.erb:9
+msgctxt "MultiAuth"
+msgid "Input login info"
+msgstr "ログイン情報入力"
+
+#: app/views/signup/email/_progress.html.erb:10
+msgctxt "MultiAuth"
+msgid "Confirm login info"
+msgstr "ログイン情報確認"
+
+#: app/views/signup/email/_progress.html.erb:11
+#: app/views/signup/email/created.html.erb:4
+msgctxt "MultiAuth"
+msgid "Pre-registration completed"
+msgstr "仮登録完了"
+
+#: app/views/signup/email/_progress.html.erb:12
+#: app/views/signup/email/validated.html.erb:4
+#: app/views/signup/email/activation.html.erb:4
+msgctxt "MultiAuth"
+msgid "Registration confirmation"
+msgstr "登録完了"
+
+#: app/views/signup/email/index.html.erb:4
+msgctxt "MultiAuth"
+msgid "Signup by email address"
+msgstr "メールアドレスによる登録"
+
+#: app/views/signup/email/created.html.erb:9
+msgctxt "MultiAuth"
+msgid "Sent a mail to %{email}."
+msgstr "%{email} にメールを送信しました。"
+
+#: app/views/signup/email/validated.html.erb:14
+msgid "EmailCredential|Password"
+msgstr "パスワード"
+
+#: app/views/signup/email/activation.html.erb:9
+msgctxt "MultiAuth"
+msgid "Valid activation token"
+msgstr "有効なアクティベーショントークン"
+
+#: app/views/signup/email/activation.html.erb:11
+msgctxt "MultiAuth"
+msgid "Activated"
+msgstr "アクティベーション済"
+
+#: app/views/signup/email/activation.html.erb:13
+msgctxt "MultiAuth"
+msgid "Inactivated"
+msgstr "未アクティベーション"
+
+#: app/views/signup/email/activation.html.erb:22
+msgctxt "MultiAuth"
+msgid "Regist"
+msgstr "登録"
+
+#: app/views/signup/email/activation.html.erb:26
+msgctxt "MultiAuth"
+msgid "Invalid activation token"
+msgstr "無効なアクティベーショントークン"
+
 #: lib/multi_auth/action_controller.rb:34
 msgctxt "MultiAuth"
 msgid "Session has expired. Please login again."
@@ -146,7 +515,3 @@ msgstr "セッションがタイムアウトしました。再度ログインし
 msgctxt "MultiAuth"
 msgid "Login required."
 msgstr "ログインが必要です。"
-
-#~ msgctxt "MultiAuth"
-#~ msgid "It is invalid Email authentication credential."
-#~ msgstr "メール認証情報が正しくありません。"

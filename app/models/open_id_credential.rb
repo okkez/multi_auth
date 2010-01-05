@@ -16,6 +16,8 @@ class OpenIdCredential < ActiveRecord::Base
 
   untranslate :created_at, :user_id
 
+  N_("OpenIdCredential|Activated on")
+
   MaximumRecordsPerUser = 10
 
   belongs_to :user, :class_name => MultiAuth.user_model, :foreign_key => 'user_id'

@@ -6,9 +6,9 @@ item = proc { |num, html|
 -%>
 
 <ol id="email-signup-progress">
- <%= item[1, "ログイン情報の入力"] %>
- <%= item[2, "ログイン情報の確認"] %>
- <%= item[3, "仮登録の完了"] %>
- <%= item[4, "本登録の確認"] %>
- <%= item[5, "本登録の完了"] %>
+ <%= item[1, p_("MultiAuth", "Input login info")] %>
+ <%= item[2, p_("MultiAuth", "Confirm login info")] %>
+ <%= item[3, p_("MultiAuth", "Pre-registration completed")] %>
+ <%= item[4, p_("MultiAuth", "Registration confirmation")] %>
+ <%= item[5, p_("MultiAuth", "Registration completed")] %>
 </ol>

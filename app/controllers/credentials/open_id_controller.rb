@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 # OpenID認証情報コントローラ
 class Credentials::OpenIdController < ApplicationController
@@ -18,7 +19,7 @@ class Credentials::OpenIdController < ApplicationController
     @login_form = OpenIdLoginForm.new(params[:login_form])
 
     if params[:open_id_complete].nil? && !@login_form.valid?
-      set_error_now("入力内容を確認してください。")
+      set_error_now(p_("MultiAuth", "Please confirm your input."))
       render(:action => "new")
       return
     end
@@ -33,9 +34,11 @@ class Credentials::OpenIdController < ApplicationController
         if @open_id_credential.new_record?
           @open_id_credential.save!
 
+          set_notice(p_("MultiAuth", "OpenID authentication credential was successfully added."))
           set_notice("OpenID認証情報を追加しました。")
           redirect_to(:controller => "/credentials", :action => "index")
         else
+          set_error_now(p_("MultiAuth", "This OpenID has been already registered."))
           set_error_now("既に使用されているOpenIDです。")
           render(:action => "new")
         end
@@ -55,6 +58,7 @@ class Credentials::OpenIdController < ApplicationController
   def destroy
     @open_id_credential.destroy
 
+    set_notice(p_("MultiAuth", "OpenID authentication credential was successfully deleted."))
     set_notice("OpenID認証情報を削除しました。")
     redirect_to(:controller => "/credentials")
   end
@@ -67,6 +71,7 @@ class Credentials::OpenIdController < ApplicationController
     if @open_id_credential
       return true
     else
+      set_error(p_("MultiAuth", "It is invalid OpenID authentication credential."))
       set_error("OpenID認証情報IDが正しくありません。")
       redirect_to(root_path)
       return false
@@ -77,6 +82,7 @@ class Credentials::OpenIdController < ApplicationController
     if @open_id_credential.user_id == @login_user.id
       return true
     else
+      set_error(p_("MultiAuth", "It is invalid OpenID authentication credential."))
       set_error("OpenID認証情報IDが正しくありません。")
       redirect_to(root_path)
       return false

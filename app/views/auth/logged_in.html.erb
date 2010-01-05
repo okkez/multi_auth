@@ -1,5 +1,5 @@
 
-<%- @title = "ログインしました" -%>
+<%- @title = p_("MultiAuth", "Logged in successfully.") -%>
 <%- @enable_side_column = false -%>
 <%- @stylesheets = %[auth] -%>
 
@@ -16,6 +16,8 @@
 <%- } -%>
 
 <div id="dialog">
-  <h1>ログインしました</h1>
-  <div class="message">ページが切り替わらない場合は <%= link_to(h(@return_path), @return_path) %> をクリックしてください。</div>
+  <h1><%=h @title %></h1>
+  <div class="message">
+    <%=h p_("MultiAuth", "Please click %{link} when the page doesn't change." % { :link => link_to(h(@return_path), @return_path) }) %>
+  </div>
 </div>

@@ -21,10 +21,10 @@ class Auth::OpenIdController < ApplicationController
         if @open_id_credential
           @open_id_credential.login!
           session[:user_id] = @open_id_credential.user_id
-          flash[:notice] = "ログインしました。"
+          set_notice(p_("MultiAuth", "Logged in successfully."))
           redirect_to(root_path)
         else
-          flash[:notice] = "OpenID がまだ登録されていません。"
+          set_notice(p_("MultiAuth", "This OpenID has not been registered yet."))
           redirect_to(:controller => "signup/open_id", :action => "index")
         end
       else
@@ -36,7 +36,7 @@ class Auth::OpenIdController < ApplicationController
   private
 
   def failed_login(message)
-    flash[:error] = message
+    set_error(message)
     redirect_to(root_path)
   end
 
