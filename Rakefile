@@ -18,6 +18,8 @@ PKG_FILES = FileList[
                      'lib/**/*.rb',
                      'rails/init.rb',
                      'generators/**/*',
+                     'po/**/*',
+                     'locale/**/*',
                      'test/**/*.rb'
                     ]
 
