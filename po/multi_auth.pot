@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: multi_auth 1.0.0\n"
-"POT-Creation-Date: 2010-01-05 17:00+0900\n"
+"POT-Creation-Date: 2010-01-06 00:13+0900\n"
 "PO-Revision-Date: 2009-11-08 22:38+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -394,6 +394,11 @@ msgctxt "MultiAuth"
 msgid "Registration completed!"
 msgstr ""
 
+#: app/views/signup/index.html.erb:17 app/views/signup/index.html.erb:39
+msgctxt "MultiAuth"
+msgid "Flow"
+msgstr ""
+
 #: app/views/signup/index.html.erb:28
 #: app/views/signup/open_id/index.html.erb:15
 msgctxt "MultiAuth"
@@ -425,6 +430,7 @@ msgstr ""
 #: app/views/signup/open_id/created.html.erb:2
 #: app/views/signup/email/activated.html.erb:2
 #: app/views/signup/email/index.html.erb:2
+#: app/views/signup/email/created.html.erb:2
 #: app/views/signup/email/validated.html.erb:2
 #: app/views/signup/email/activation.html.erb:2
 msgctxt "MultiAuth"
@@ -502,6 +508,31 @@ msgstr ""
 #: app/views/signup/email/activation.html.erb:26
 msgctxt "MultiAuth"
 msgid "Invalid activation token"
+msgstr ""
+
+#: lib/open_id_authentication/result.rb:10
+msgctxt "OpenIdAuthentication"
+msgid "Sorry, the OpenID server couldn't be found"
+msgstr ""
+
+#: lib/open_id_authentication/result.rb:11
+msgctxt "OpenIdAuthentication"
+msgid "Sorry, but this does not appear to be a valid OpenID"
+msgstr ""
+
+#: lib/open_id_authentication/result.rb:12
+msgctxt "OpenIdAuthentication"
+msgid "OpenID verification was canceled"
+msgstr ""
+
+#: lib/open_id_authentication/result.rb:13
+msgctxt "OpenIdAuthentication"
+msgid "OpenID verification failed"
+msgstr ""
+
+#: lib/open_id_authentication/result.rb:14
+msgctxt "OpenIdAuthentication"
+msgid "OpenID verification needs setup"
 msgstr ""
 
 #: lib/multi_auth/action_controller.rb:34
