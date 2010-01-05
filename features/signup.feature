@@ -8,7 +8,7 @@
     もし "メールアドレス" に "hoge@example.jp" と入力する
     かつ "パスワード" に "fuga" と入力する
     かつ "signup_form_password_confirmation" に "fuga" と入力する
-    かつ "確認画面へ" ボタンをクリックする
+    かつ "確認" ボタンをクリックする
 
     ならば "登録確認" と表示されていること
     かつ "hoge@example.jp" と表示されていること

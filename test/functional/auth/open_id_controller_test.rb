@@ -44,7 +44,7 @@ class Auth::OpenIdControllerTest < ActionController::TestCase
     }
     assert_response(:redirect)
     assert_redirected_to(:controller => 'signup/open_id', :action => 'index')
-    assert_equal('OpenID がまだ登録されていません。', @response.flash[:notice])
+    assert_equal('この OpenID はまだ登録されていません。', @response.flash[:notice])
   end
 
   [

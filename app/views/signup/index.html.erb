@@ -14,7 +14,7 @@
                    p_("MultiAuth", "OpenID Authentication"),
                    p_("MultiAuth", "Confirmation"),
                    p_("MultiAuth", "Registration completed!")] -%>
-      <%=h p_("Flow") %>: <%=h steps.join(" -> ") %>
+      <%=h p_("MultiAuth", "Flow") %>: <%=h steps.join(" -> ") %>
     </div>
     <%- form_tag(:controller => "signup/open_id", :action => "authenticate") { -%>
       <table>
@@ -36,7 +36,7 @@
                    p_("MultiAuth", "Recieve confirmation mail"),
                    p_("MultiAuth", "Confirmation"),
                    p_("MultiAuth", "Registration completed!")] -%>
-      <%=h p_("Flow") %>: <%=h steps.join(" -> ") %>
+      <%=h p_("MultiAuth", "Flow") %>: <%=h steps.join(" -> ") %>
     </div>
     <%- form_for(:signup_form, @signup_form, :url => {:controller => "signup/email", :action => "validate"}) { |f| -%>
       <table>

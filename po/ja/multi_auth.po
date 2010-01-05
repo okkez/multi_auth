@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: multi_auth 1.0.0\n"
 "POT-Creation-Date: 2010-01-05 17:00+0900\n"
-"PO-Revision-Date: 2010-01-05 17:01+0900\n"
+"PO-Revision-Date: 2010-01-05 17:10+0900\n"
 "Last-Translator: okkez <okkez000@gmail.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -465,7 +465,7 @@ msgstr "仮登録完了"
 #: app/views/signup/email/activation.html.erb:4
 msgctxt "MultiAuth"
 msgid "Registration confirmation"
-msgstr "登録完了"
+msgstr "登録確認"
 
 #: app/views/signup/email/index.html.erb:4
 msgctxt "MultiAuth"
