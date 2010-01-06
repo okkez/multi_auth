@@ -14,7 +14,7 @@ class ActivationMailer < ActionMailer::Base
     raise(ArgumentError) unless options.empty?
 
     return {
-      :subject    => SubjectPrefix + "ユーザ登録",
+      :subject    => SubjectPrefix + p_("MultiAuth", "User registration"),
       :from       => FromAddress,
       :recipients => recipients,
       :body       => {:activation_url => activation_url},
@@ -27,7 +27,7 @@ class ActivationMailer < ActionMailer::Base
     raise(ArgumentError) unless options.empty?
 
     return {
-      :subject    => SubjectPrefix + "ユーザ登録完了",
+      :subject    => SubjectPrefix + p_("MultiAuth", "User registration completed"),
       :from       => FromAddress,
       :recipients => recipients,
       :body       => {},
@@ -41,7 +41,7 @@ class ActivationMailer < ActionMailer::Base
     raise(ArgumentError) unless options.empty?
 
     return {
-      :subject    => SubjectPrefix + "メールアドレス認証登録",
+      :subject    => SubjectPrefix + p_("MultiAuth", "Email address registration for authentication"),
       :from       => FromAddress,
       :recipients => recipients,
       :body       => {:activation_url => activation_url},
@@ -54,7 +54,7 @@ class ActivationMailer < ActionMailer::Base
     raise(ArgumentError) unless options.empty?
 
     return {
-      :subject    => SubjectPrefix + "メールアドレス認証登録完了",
+      :subject    => SubjectPrefix + p_("MultiAuth", "Email address registration for authentication completed"),
       :from       => FromAddress,
       :recipients => recipients,
       :body       => {},
@@ -68,7 +68,7 @@ class ActivationMailer < ActionMailer::Base
     raise(ArgumentError) unless options.empty?
 
     return {
-      :subject    => SubjectPrefix + "通知先メールアドレス登録",
+      :subject    => SubjectPrefix + p_("MultiAuth", "Email address registration for notification"),
       :from       => FromAddress,
       :recipients => recipients,
       :body       => {:activation_url => activation_url},
@@ -81,7 +81,7 @@ class ActivationMailer < ActionMailer::Base
     raise(ArgumentError) unless options.empty?
 
     return {
-      :subject    => SubjectPrefix + "通知先メールアドレス登録完了",
+      :subject    => SubjectPrefix + p_("MultiAuth", "Email address registration for notification completed"),
       :from       => FromAddress,
       :recipients => recipients,
       :body       => {},

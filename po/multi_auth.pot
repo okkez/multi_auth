@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: multi_auth 1.0.0\n"
-"POT-Creation-Date: 2010-01-06 00:13+0900\n"
+"POT-Creation-Date: 2010-01-06 15:47+0900\n"
 "PO-Revision-Date: 2009-11-08 22:38+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -125,6 +125,36 @@ msgstr ""
 
 #: app/models/open_id_login_form.rb:13
 msgid "OpenIdLoginForm|Openid url"
+msgstr ""
+
+#: app/models/activation_mailer.rb:17
+msgctxt "MultiAuth"
+msgid "User registration"
+msgstr ""
+
+#: app/models/activation_mailer.rb:30
+msgctxt "MultiAuth"
+msgid "User registration completed"
+msgstr ""
+
+#: app/models/activation_mailer.rb:44
+msgctxt "MultiAuth"
+msgid "Email address registration for authentication"
+msgstr ""
+
+#: app/models/activation_mailer.rb:57
+msgctxt "MultiAuth"
+msgid "Email address registration for authentication completed"
+msgstr ""
+
+#: app/models/activation_mailer.rb:71
+msgctxt "MultiAuth"
+msgid "Email address registration for notification"
+msgstr ""
+
+#: app/models/activation_mailer.rb:84
+msgctxt "MultiAuth"
+msgid "Email address registration for notification completed"
 msgstr ""
 
 #: app/models/email_credential.rb:-
@@ -353,6 +383,67 @@ msgctxt "MultiAuth"
 msgid "By email address"
 msgstr ""
 
+#: app/views/activation_mailer/request_for_credential.erb:1
+msgctxt "MultiAuth"
+msgid "Email address for authentication will be registered."
+msgstr ""
+
+#: app/views/activation_mailer/request_for_credential.erb:2
+#: app/views/activation_mailer/request_for_signup.erb:2
+#: app/views/activation_mailer/request_for_notice.erb:2
+msgctxt "MultiAuth"
+msgid "Registration is completed by accessing following URL."
+msgstr ""
+
+#: app/views/activation_mailer/request_for_credential.erb:8
+#: app/views/activation_mailer/request_for_signup.erb:8
+#: app/views/activation_mailer/request_for_notice.erb:8
+msgctxt "MultiAuth"
+msgid "- For access with cellular phone etc."
+msgstr ""
+
+#: app/views/activation_mailer/request_for_credential.erb:9
+#: app/views/activation_mailer/request_for_signup.erb:9
+#: app/views/activation_mailer/request_for_notice.erb:9
+msgctxt "MultiAuth"
+msgid ""
+"It is not possible to register from the cellular phone etc. that do not "
+"correspond to Cookie now."
+msgstr ""
+
+#: app/views/activation_mailer/request_for_credential.erb:10
+#: app/views/activation_mailer/request_for_signup.erb:10
+#: app/views/activation_mailer/request_for_notice.erb:10
+msgctxt "MultiAuth"
+msgid ""
+"Please register after forwarding this mail to PC etc. though it is time."
+msgstr ""
+
+#: app/views/activation_mailer/request_for_signup.erb:1
+msgctxt "MultiAuth"
+msgid "Thank you for the user registration to %{app}."
+msgstr ""
+
+#: app/views/activation_mailer/complete_for_notice.erb:1
+msgctxt "MultiAuth"
+msgid "The email address registration was completed."
+msgstr ""
+
+#: app/views/activation_mailer/request_for_notice.erb:1
+msgctxt "MultiAuth"
+msgid "Email address for notification will be registered."
+msgstr ""
+
+#: app/views/activation_mailer/complete_for_credential.erb:1
+msgctxt "MultiAuth"
+msgid "The registration of the email address authentication was completed."
+msgstr ""
+
+#: app/views/activation_mailer/complete_for_signup.erb:1
+msgctxt "MultiAuth"
+msgid "The user registration was completed."
+msgstr ""
+
 #: app/views/signup/index.html.erb:2
 msgctxt "MultiAuth"
 msgid "Register your account"
@@ -510,27 +601,27 @@ msgctxt "MultiAuth"
 msgid "Invalid activation token"
 msgstr ""
 
-#: lib/open_id_authentication/result.rb:10
+#: lib/open_id_authentication/result.rb:5
 msgctxt "OpenIdAuthentication"
 msgid "Sorry, the OpenID server couldn't be found"
 msgstr ""
 
-#: lib/open_id_authentication/result.rb:11
+#: lib/open_id_authentication/result.rb:6
 msgctxt "OpenIdAuthentication"
 msgid "Sorry, but this does not appear to be a valid OpenID"
 msgstr ""
 
-#: lib/open_id_authentication/result.rb:12
+#: lib/open_id_authentication/result.rb:7
 msgctxt "OpenIdAuthentication"
 msgid "OpenID verification was canceled"
 msgstr ""
 
-#: lib/open_id_authentication/result.rb:13
+#: lib/open_id_authentication/result.rb:8
 msgctxt "OpenIdAuthentication"
 msgid "OpenID verification failed"
 msgstr ""
 
-#: lib/open_id_authentication/result.rb:14
+#: lib/open_id_authentication/result.rb:9
 msgctxt "OpenIdAuthentication"
 msgid "OpenID verification needs setup"
 msgstr ""

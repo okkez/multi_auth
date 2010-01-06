@@ -59,7 +59,7 @@ class ActivationMailerTest < ActionMailer::TestCase
       :activation_url => "http://activation/url",
     }
     expected = {
-      :subject    => "[#{MultiAuth.application_name}] メールアドレス認証登録",
+      :subject    => "[#{MultiAuth.application_name}] 認証用メールアドレス登録",
       :from       => @klass::FromAddress,
       :recipients => "recipients@example.jp",
       :body       => {:activation_url => "http://activation/url"},
@@ -80,7 +80,7 @@ class ActivationMailerTest < ActionMailer::TestCase
       :recipients => "recipients@example.jp",
     }
     expected = {
-      :subject    => "[#{MultiAuth.application_name}] メールアドレス認証登録完了",
+      :subject    => "[#{MultiAuth.application_name}] 認証用メールアドレス登録完了",
       :from       => @klass::FromAddress,
       :recipients => "recipients@example.jp",
       :body       => {},

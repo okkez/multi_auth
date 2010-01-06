@@ -1,11 +1,11 @@
-<%= MultiAuth.application_name %>へのユーザ登録、ありがとうございます。
-下記のURLへアクセスすることにより、登録が完了します。
+<%=p_("MultiAuth", "Thank you for the user registration to %{app}." % { :app => MultiAuth.application_name }) %>
+<%=p_("MultiAuth", "Registration is completed by accessing following URL.") %>
 
 <%= @activation_url %>
 
-※ 携帯電話等でのアクセスに関して
-現時点では、Cookieに対応していない携帯電話等からは登録を行うことができません。
-お手数ではございますが、本メールをPC等に転送した上で、登録をお願いいたします。
+<%=p_("MultiAuth", "- For access with cellular phone etc.") %>
+<%=p_("MultiAuth", "It is not possible to register from the cellular phone etc. that do not correspond to Cookie now.") %>
+<%=p_("MultiAuth", "Please register after forwarding this mail to PC etc. though it is time.") %>
 
 -- 
 <%= MultiAuth.application_name %>
