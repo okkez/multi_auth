@@ -1,9 +1,5 @@
 = TODO
 
-* gettext を Rails Engines で使う方法を調べる -> bind_textdomain, init_gettext あたり
-* i18n 対応する
-  * Rails 標準の i18n と gettext-rails を比較する -> gettext を使う
-* generator 使ってマイグレーションファイルを作成するようにする
 * コードを確認して不要なファイルを消す (画像など)
 * スタイルシートを整理する
 * Rails Engines で Cells を使用できるか調査する
@@ -20,6 +16,10 @@
   * これならコントローラー名が変わった場合も NoMethodError で検出できそう
 
 * セッションタイムアウトがどうなっているか確認する
+  * 実装したがちゃんと動いてなさそうなのでテストする
+
+* リダイレクト先を設定可能にする
+  * 現在は root_path 固定
 
 = DONE
 
@@ -28,3 +28,7 @@
   * nayutaya-active-form gem を入れた
 * TokenLength などの定数をなんとかする
   * DummyUser にしかないのでなんとかしなくても大丈夫
+* gettext を Rails Engines で使う方法を調べる -> bind_textdomain, init_gettext あたり
+* i18n 対応する
+  * Rails 標準の i18n と gettext-rails を比較する -> gettext を使う
+* generator 使ってマイグレーションファイルを作成するようにする
