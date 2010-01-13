@@ -38,6 +38,7 @@ spec = Gem::Specification.new do |s|
 
   s.add_dependency("okkez-open_id_authentication")
   s.add_dependency("validates_email_format_of")
+  s.add_dependency("nayutaya-active-form")
 end
 
 Rake::GemPackageTask.new(spec) do |pkg|
