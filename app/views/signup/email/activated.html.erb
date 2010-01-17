@@ -6,4 +6,4 @@
 <%= render(:partial => "progress", :locals => {:step => 5}) %>
 
 <div><%=h p_("MultiAuth", "Registration completed") %></div>
-<div><%= link_to(h(p_("MultiAuth", "Login")), :controller => "auth/email") %></div>
+<div id="login_by_email"><%= link_to(h(p_("MultiAuth", "Login")), :controller => "auth/email") %></div>
