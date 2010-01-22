@@ -7,6 +7,6 @@
 <div id="dialog">
   <h1><%=h @title %></h1>
   <div class="message">
-    <%=h p_("MultiAuth", "Please click %{link} when the page doesn't change." % { :link => link_to(h(@return_path), @return_path) }) %>
+    <%= p_("MultiAuth", "Please click %{link} when the page doesn't change." % { :link => link_to(h(@return_path), @return_path) }) %>
   </div>
 </div>
