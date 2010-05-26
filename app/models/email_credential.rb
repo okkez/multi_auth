@@ -91,4 +91,8 @@ class EmailCredential < ActiveRecord::Base
   def login!
     self.update_attributes!(:loggedin_at => Time.now)
   end
+
+  def to_label
+    email
+  end
 end
