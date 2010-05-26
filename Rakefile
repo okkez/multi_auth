@@ -25,7 +25,7 @@ PKG_FILES = FileList[
 
 spec = Gem::Specification.new do |s|
   s.name             = ENV['GEM_NAME'] || 'multi_auth'
-  s.version          = '0.0.7'
+  s.version          = '0.0.8'
   s.authors          = ['okkez', 'nayutaya']
   s.email            = ''
   s.homepage         = 'https://github.com/okkez/multi_auth'
