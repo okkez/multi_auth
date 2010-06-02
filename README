@@ -69,6 +69,13 @@ Ex.
     s.session_times_out_in = 1.hour
   end
 
+You can use OpenID::CustomFetcher to use OpenID provider which uses SSL.
+
+Ex.
+
+  OpenID.fetcher = OpenID::CustomFetcher.new
+  OpenID.fetcher.ca_path = OpenSSL::X509::DEFAULT_CERT_PATH
+
 Customize
 =========
 
