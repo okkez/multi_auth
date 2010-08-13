@@ -28,6 +28,6 @@ config.action_mailer.delivery_method = :test
 # config.active_record.schema_format = :sql
 
 config.gem "nayutaya-kagemusha", :lib => "kagemusha", :source => "http://gems.github.com"
-config.gem "cucumber"
-config.gem "webrat"
-config.gem "bmabey-email_spec", :lib => "email_spec", :source => "http://gems.github.com"
+#config.gem "cucumber"
+#config.gem "webrat"
+#config.gem "email_spec"
