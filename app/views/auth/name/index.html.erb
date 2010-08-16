@@ -1,0 +1,89 @@
+<%- @title = p_("MultiAuth", "Login") -%>
+<%- @enable_side_column = false -%>
+
+<%- additional_head { -%>
+  <style type="text/css">
+    #dialog
+    {
+        margin: 100px auto;
+        padding: 15px;
+        width: 400px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #CCCCCC;
+    }
+    #dialog h1
+    {
+        margin: 0 0 0.4em 0;
+        color: #666666;
+        font-size: 130%;
+        font-weight: bold;
+    }
+
+    table#name-login
+    {
+        margin: 0 auto;
+        border-collapse: collapse;
+        border-width: 0px;
+    }
+
+    table#name-login th,
+    table#name-login td
+    {
+        padding: 5px;
+        border-width: 0px;
+    }
+
+    table#name-login th
+    {
+        text-align: right;
+        font-size: 95%;
+        font-weight: bold;
+        vertical-align: top;
+        color: #666666;
+    }
+    table#name-login td
+    {
+        color: #333333;
+    }
+
+    div.fieldWithErrors label
+    {
+        color: #990000;
+    }
+    div.formError
+    {
+        font-size: 80%;
+        color: #990000;
+    }
+  </style>
+<%- } -%>
+
+<div id="dialog">
+  <h1><%=h p_("MultiAuth", "Login") %></h1>
+  <%- form_for(:login_form, @login_form, :url => {:action => "login"}) do |f| -%>
+    <table id="name-login">
+      <tr>
+        <th><%= f.label(:name) %></th>
+        <td>
+          <%= f.text_field(:name, :size => 30) %>
+          <%= error_message_on(:login_form, :name) %>
+        </td>
+      </tr>
+      <tr>
+        <th><%= f.label(:password) %></th>
+        <td>
+          <%= f.password_field(:password, :size => 30) %>
+          <%= error_message_on(:login_form, :password) %>
+        </td>
+      </tr>
+    </table>
+    <%= submit_tag(p_("MultiAuth", "Login")) %>
+  <%- end -%>
+</div>
+
+<%- unless production? -%>
+  <div class="debug">
+    <%= error_messages_for(:login_form) %>
+  </div>
+<%- end -%>
