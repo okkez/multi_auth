@@ -44,6 +44,13 @@ ActionController::Routing::Routes.draw do |map|
     open_id.connect "credential/open_id/:open_id_credential_id/:action", :action => /(delete|destroy)/, :open_id_credential_id => IdPattern
   end
 
+  map.with_options :controller => "credentials/name" do |name|
+    name.connect "credentials/name/:action", :action => /(new|create)/
+    name.connect("credential/name/:name_credential_id/:action",
+                 :action => /(edit_password|update_password|delete|destroy)/,
+                 :name_credential_id => IdPattern)
+  end
+
   # MEMO: 下記2行のデフォルトルールをコメントアウトしてrake test:functionalsを
   #       実行することにより、リンクチェックを行うことができる
   # NOTE: この二行を有効にするとアプリケーション側の config/routes.rb で定義した
