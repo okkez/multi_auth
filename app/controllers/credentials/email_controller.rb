@@ -55,14 +55,14 @@ class Credentials::EmailController < ApplicationController
 
   # GET /credential/email/:email_credential_id/edit_password
   def edit_password
-    @edit_form = EmailPasswordEditForm.new
+    @edit_form = PasswordEditForm.new
   end
 
   # POST /credential/email/:email_credential_id/update_password
   def update_password
-    @edit_form = EmailPasswordEditForm.new(params[:edit_form])
+    @edit_form = PasswordEditForm.new(params[:edit_form])
 
-    @email_credential.attributes = @edit_form.to_email_credential_hash
+    @email_credential.attributes = @edit_form.to_credential_hash
 
     if @edit_form.valid? && @email_credential.save
       set_notice(p_("MultiAuth", "Password was changed."))

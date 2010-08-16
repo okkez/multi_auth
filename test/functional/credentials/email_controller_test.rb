@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 require 'test_helper'
 
@@ -13,7 +14,7 @@ class Credentials::EmailControllerTest < ActionController::TestCase
       :password              => "password",
       :password_confirmation => "password")
 
-    @password_edit_form = EmailPasswordEditForm.new(
+    @password_edit_form = PasswordEditForm.new(
       :password              => "password",
       :password_confirmation => "password")
 
@@ -165,9 +166,7 @@ class Credentials::EmailControllerTest < ActionController::TestCase
 
     assert_equal(@yuya_gmail, assigns(:email_credential))
 
-    assert_equal(
-      EmailPasswordEditForm.new.attributes,
-      assigns(:edit_form).attributes)
+    assert_equal(PasswordEditForm.new.attributes, assigns(:edit_form).attributes)
   end
 
   test "GET edit_password, abnormal, no login" do

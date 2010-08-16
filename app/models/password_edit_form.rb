@@ -1,14 +1,6 @@
-# == Schema Information
-# Schema version: 20090529051529
-#
-# Table name: active_forms
-#
-#  password              :text
-#  password_confirmation :text
-#
+# -*- coding: utf-8 -*-
 
-# メール認証情報パスワード編集フォーム
-class EmailPasswordEditForm < ActiveForm
+class PasswordEditForm < ActiveForm
   column :password,              :type => :text
   column :password_confirmation, :type => :text
 
@@ -17,8 +9,8 @@ class EmailPasswordEditForm < ActiveForm
 
   validates_presence_of :password
   validates_presence_of :password_confirmation
-  validates_length_of :password, :in => EmailCredentialEditForm::PasswordLengthRange, :allow_nil => true
-  validates_format_of :password, :with => EmailCredentialEditForm::PasswordPattern, :allow_nil => true
+  validates_length_of :password, :in => ::EmailCredentialEditForm::PasswordLengthRange, :allow_nil => true
+  validates_format_of :password, :with => ::EmailCredentialEditForm::PasswordPattern, :allow_nil => true
   validates_each(:password) { |record, attr, value|
     # MEMO: validates_confirmation_ofはpassword_confirmation属性を上書きしてしまうため、
     #       ここでは使用できない。そのため、validates_confirmation_ofを参考に独自に実装。
@@ -28,7 +20,7 @@ class EmailPasswordEditForm < ActiveForm
     end
   }
 
-  def to_email_credential_hash
+  def to_credential_hash
     return {
       :hashed_password => EmailCredential.create_hashed_password(self.password.to_s),
     }
