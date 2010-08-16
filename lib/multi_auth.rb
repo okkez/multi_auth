@@ -7,6 +7,7 @@ module MultiAuth
     attr_accessor_with_default :from_address, 'noreply@example.com'
     attr_accessor_with_default :user_model, 'User'
     attr_accessor_with_default :session_times_out_in, 1.hour
+    attr_accessor_with_default :credentials, { :open_id => true, :email => true, :name => true }
     def setup
       yield self
     end
