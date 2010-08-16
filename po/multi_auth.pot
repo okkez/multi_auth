@@ -7,10 +7,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: multi_auth 1.0.0\n"
-"POT-Creation-Date: 2010-01-06 15:47+0900\n"
+"POT-Creation-Date: 2010-08-16 18:38+0900\n"
 "PO-Revision-Date: 2009-11-08 22:38+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,6 +24,8 @@ msgstr ""
 
 #: app/controllers/credentials/email_controller.rb:46
 #: app/controllers/credentials/email_controller.rb:73
+#: app/controllers/credentials/name_controller.rb:29
+#: app/controllers/credentials/name_controller.rb:51
 #: app/controllers/credentials/open_id_controller.rb:22
 #: app/controllers/signup/email_controller.rb:27
 #: app/controllers/signup/email_controller.rb:39
@@ -32,6 +35,7 @@ msgid "Please confirm your input."
 msgstr ""
 
 #: app/controllers/credentials/email_controller.rb:68
+#: app/controllers/credentials/name_controller.rb:46
 msgctxt "MultiAuth"
 msgid "Password was changed."
 msgstr ""
@@ -57,6 +61,22 @@ msgctxt "MultiAuth"
 msgid "This email authentication credential has been already activated."
 msgstr ""
 
+#: app/controllers/credentials/name_controller.rb:24
+msgctxt "MultiAuth"
+msgid "Name authentication credential was successfully added."
+msgstr ""
+
+#: app/controllers/credentials/name_controller.rb:65
+msgctxt "MultiAuth"
+msgid "Name authentication credential was successfully deleted."
+msgstr ""
+
+#: app/controllers/credentials/name_controller.rb:77
+#: app/controllers/credentials/name_controller.rb:87
+msgctxt "MultiAuth"
+msgid "It is invalid name authentication credential."
+msgstr ""
+
 #: app/controllers/credentials/open_id_controller.rb:37
 msgctxt "MultiAuth"
 msgid "OpenID authentication credential was successfully added."
@@ -78,22 +98,6 @@ msgctxt "MultiAuth"
 msgid "It is invalid OpenID authentication credential."
 msgstr ""
 
-#: app/controllers/auth/email_controller.rb:30
-msgctxt "MultiAuth"
-msgid "The email address or the password is wrong."
-msgstr ""
-
-#: app/controllers/auth/open_id_controller.rb:24
-#: app/views/auth/logged_in.html.erb:2
-msgctxt "MultiAuth"
-msgid "Logged in successfully."
-msgstr ""
-
-#: app/controllers/auth/open_id_controller.rb:27
-msgctxt "MultiAuth"
-msgid "This OpenID has not been registered yet."
-msgstr ""
-
 #: app/controllers/signup/email_controller.rb:93
 msgctxt "MultiAuth"
 msgid "It is an invalid activation key."
@@ -111,6 +115,35 @@ msgid ""
 "use it. "
 msgstr ""
 
+#: app/controllers/auth/email_controller.rb:30
+msgctxt "MultiAuth"
+msgid "The email address or the password is wrong."
+msgstr ""
+
+#: app/controllers/auth/name_controller.rb:27
+msgctxt "MultiAuth"
+msgid "The name or the password is wrong."
+msgstr ""
+
+#: app/controllers/auth/open_id_controller.rb:24
+#: app/views/auth/logged_in.html.erb:2
+msgctxt "MultiAuth"
+msgid "Logged in successfully."
+msgstr ""
+
+#: app/controllers/auth/open_id_controller.rb:27
+msgctxt "MultiAuth"
+msgid "This OpenID has not been registered yet."
+msgstr ""
+
+#: app/models/email_login_form.rb:15
+msgid "EmailLoginForm|Email"
+msgstr ""
+
+#: app/models/email_login_form.rb:16
+msgid "EmailLoginForm|Password"
+msgstr ""
+
 #: app/models/email_credential_edit_form.rb:21
 msgid "EmailCredentialEditForm|Email"
 msgstr ""
@@ -125,6 +158,69 @@ msgstr ""
 
 #: app/models/open_id_login_form.rb:13
 msgid "OpenIdLoginForm|Openid url"
+msgstr ""
+
+#: app/models/name_credential_edit_form.rb:11
+msgid "NameCredentialEditForm|Name"
+msgstr ""
+
+#: app/models/name_credential_edit_form.rb:12
+msgid "NameCredentialEditForm|Password"
+msgstr ""
+
+#: app/models/name_credential_edit_form.rb:13
+msgid "NameCredentialEditForm|Password confirmation"
+msgstr ""
+
+#: app/models/name_credential.rb:-
+msgid "name credential"
+msgstr ""
+
+#: app/models/name_credential.rb:-
+#: app/views/credentials/name/delete.html.erb:12
+#: app/views/credentials/index.html.erb:99
+msgid "NameCredential|Name"
+msgstr ""
+
+#: app/models/name_credential.rb:- app/views/credentials/index.html.erb:98
+msgid "NameCredential|Loggedin at"
+msgstr ""
+
+#: app/models/email_credential.rb:-
+msgid "email credential"
+msgstr ""
+
+#: app/models/email_credential.rb:-
+msgid "EmailCredential|Activation token"
+msgstr ""
+
+#: app/models/email_credential.rb:-
+#: app/views/credentials/email/delete.html.erb:13
+#: app/views/credentials/email/activation.html.erb:8
+#: app/views/credentials/index.html.erb:53
+#: app/views/signup/email/activation.html.erb:16
+#: app/views/signup/email/validated.html.erb:10
+msgid "EmailCredential|Email"
+msgstr ""
+
+#: app/models/email_credential.rb:-
+msgid "EmailCredential|Activated at"
+msgstr ""
+
+#: app/models/email_credential.rb:- app/views/credentials/index.html.erb:52
+msgid "EmailCredential|Loggedin at"
+msgstr ""
+
+#: app/models/email_credential.rb:22 app/views/credentials/index.html.erb:51
+msgid "EmailCredential|Activated on"
+msgstr ""
+
+#: app/models/password_edit_form.rb:7
+msgid "EmailPasswordEditForm|Password"
+msgstr ""
+
+#: app/models/password_edit_form.rb:8
+msgid "EmailPasswordEditForm|Password confirmation"
 msgstr ""
 
 #: app/models/activation_mailer.rb:17
@@ -157,32 +253,12 @@ msgctxt "MultiAuth"
 msgid "Email address registration for notification completed"
 msgstr ""
 
-#: app/models/email_credential.rb:-
-msgid "email credential"
+#: app/models/name_login_form.rb:5
+msgid "NameLoginForm|Name"
 msgstr ""
 
-#: app/models/email_credential.rb:-
-msgid "EmailCredential|Activation token"
-msgstr ""
-
-#: app/models/email_credential.rb:- app/views/credentials/index.html.erb:50
-#: app/views/credentials/email/delete.html.erb:13
-#: app/views/credentials/email/activation.html.erb:8
-#: app/views/signup/email/validated.html.erb:10
-#: app/views/signup/email/activation.html.erb:16
-msgid "EmailCredential|Email"
-msgstr ""
-
-#: app/models/email_credential.rb:-
-msgid "EmailCredential|Activated at"
-msgstr ""
-
-#: app/models/email_credential.rb:- app/views/credentials/index.html.erb:49
-msgid "EmailCredential|Loggedin at"
-msgstr ""
-
-#: app/models/email_credential.rb:22 app/views/credentials/index.html.erb:48
-msgid "EmailCredential|Activated on"
+#: app/models/name_login_form.rb:6
+msgid "NameLoginForm|Password"
 msgstr ""
 
 #: app/models/open_id_credential.rb:-
@@ -193,117 +269,135 @@ msgstr ""
 msgid "OpenIdCredential|Identity url"
 msgstr ""
 
-#: app/models/open_id_credential.rb:- app/views/credentials/index.html.erb:10
+#: app/models/open_id_credential.rb:- app/views/credentials/index.html.erb:11
 msgid "OpenIdCredential|Loggedin at"
 msgstr ""
 
-#: app/models/open_id_credential.rb:19 app/views/credentials/index.html.erb:9
+#: app/models/open_id_credential.rb:19 app/views/credentials/index.html.erb:10
 msgid "OpenIdCredential|Activated on"
 msgstr ""
 
-#: app/models/email_login_form.rb:15
-msgid "EmailLoginForm|Email"
-msgstr ""
-
-#: app/models/email_login_form.rb:16
-msgid "EmailLoginForm|Password"
-msgstr ""
-
-#: app/models/email_password_edit_form.rb:15
-msgid "EmailPasswordEditForm|Password"
-msgstr ""
-
-#: app/models/email_password_edit_form.rb:16
-msgid "EmailPasswordEditForm|Password confirmation"
-msgstr ""
-
-#: app/views/credentials/index.html.erb:2
+#: app/views/activation_mailer/complete_for_credential.erb:1
 msgctxt "MultiAuth"
-msgid "Login setting"
+msgid "The registration of the email address authentication was completed."
 msgstr ""
 
-#: app/views/credentials/index.html.erb:4
+#: app/views/activation_mailer/request_for_notice.erb:1
 msgctxt "MultiAuth"
-msgid "OpenID authentication"
+msgid "Email address for notification will be registered."
 msgstr ""
 
-#: app/views/credentials/index.html.erb:19
+#: app/views/activation_mailer/request_for_notice.erb:2
+#: app/views/activation_mailer/request_for_signup.erb:2
+#: app/views/activation_mailer/request_for_credential.erb:2
 msgctxt "MultiAuth"
-msgid "Add OpenID authentication"
+msgid "Registration is completed by accessing following URL."
 msgstr ""
 
-#: app/views/credentials/index.html.erb:27
+#: app/views/activation_mailer/request_for_notice.erb:6
+#: app/views/activation_mailer/request_for_signup.erb:6
+#: app/views/activation_mailer/request_for_credential.erb:6
 msgctxt "MultiAuth"
-msgid "There are no OpenID authentication."
+msgid "- For access with cellular phone etc."
 msgstr ""
 
-#: app/views/credentials/index.html.erb:36
-#: app/views/credentials/index.html.erb:81
-#: app/views/credentials/open_id/delete.html.erb:19
-#: app/views/credentials/email/delete.html.erb:19
+#: app/views/activation_mailer/request_for_notice.erb:7
+#: app/views/activation_mailer/request_for_signup.erb:7
+#: app/views/activation_mailer/request_for_credential.erb:7
 msgctxt "MultiAuth"
-msgid "Delete"
+msgid ""
+"It is not possible to register from the cellular phone etc. that do not "
+"correspond to Cookie now."
 msgstr ""
 
-#: app/views/credentials/index.html.erb:43
+#: app/views/activation_mailer/request_for_notice.erb:8
+#: app/views/activation_mailer/request_for_signup.erb:8
+#: app/views/activation_mailer/request_for_credential.erb:8
 msgctxt "MultiAuth"
-msgid "Email address authentication"
+msgid ""
+"Please register after forwarding this mail to PC etc. though it is time."
 msgstr ""
 
-#: app/views/credentials/index.html.erb:58
+#: app/views/activation_mailer/request_for_signup.erb:1
 msgctxt "MultiAuth"
-msgid "Add email address authentication"
+msgid "Thank you for the user registration to %{app}."
 msgstr ""
 
-#: app/views/credentials/index.html.erb:66
+#: app/views/activation_mailer/complete_for_notice.erb:1
 msgctxt "MultiAuth"
-msgid "There are no email address authentication."
+msgid "The email address registration was completed."
 msgstr ""
 
-#: app/views/credentials/index.html.erb:77
+#: app/views/activation_mailer/request_for_credential.erb:1
 msgctxt "MultiAuth"
-msgid "Waiting for activation"
+msgid "Email address for authentication will be registered."
 msgstr ""
 
-#: app/views/credentials/index.html.erb:80
-#: app/views/credentials/email/edit_password.html.erb:2
+#: app/views/activation_mailer/complete_for_signup.erb:1
 msgctxt "MultiAuth"
-msgid "Update password"
+msgid "The user registration was completed."
 msgstr ""
 
-#: app/views/credentials/open_id/delete.html.erb:2
-#: app/views/credentials/open_id/delete.html.erb:7
+#: app/views/credentials/name/delete.html.erb:1
+#: app/views/credentials/name/delete.html.erb:6
 msgctxt "MultiAuth"
-msgid "Delete OpenID authentication credential."
+msgid "Delete name authentication credential."
 msgstr ""
 
-#: app/views/credentials/open_id/delete.html.erb:8
+#: app/views/credentials/name/delete.html.erb:7
 #: app/views/credentials/email/delete.html.erb:8
+#: app/views/credentials/open_id/delete.html.erb:8
 msgctxt "MultiAuth"
 msgid "Are you sure?"
 msgstr ""
 
-#: app/views/credentials/open_id/new.html.erb:2
+#: app/views/credentials/name/delete.html.erb:18
+#: app/views/credentials/email/delete.html.erb:19
+#: app/views/credentials/index.html.erb:37
+#: app/views/credentials/index.html.erb:84
+#: app/views/credentials/index.html.erb:126
+#: app/views/credentials/open_id/delete.html.erb:19
 msgctxt "MultiAuth"
-msgid "Add OpenID authentication credential"
+msgid "Delete"
 msgstr ""
 
-#: app/views/credentials/open_id/new.html.erb:16
+#: app/views/credentials/name/new.html.erb:1
+msgctxt "MultiAuth"
+msgid "Add name authentication credential"
+msgstr ""
+
+#: app/views/credentials/name/new.html.erb:24
 #: app/views/credentials/email/new.html.erb:25
+#: app/views/credentials/open_id/new.html.erb:16
 msgctxt "MultiAuth"
 msgid "Add"
 msgstr ""
 
+#: app/views/credentials/name/edit_password.html.erb:1
+#: app/views/credentials/email/edit_password.html.erb:2
+#: app/views/credentials/index.html.erb:83
+#: app/views/credentials/index.html.erb:125
+msgctxt "MultiAuth"
+msgid "Update password"
+msgstr ""
+
+#: app/views/credentials/name/edit_password.html.erb:20
 #: app/views/credentials/email/edit_password.html.erb:21
 msgctxt "MultiAuth"
 msgid "Update"
 msgstr ""
 
+#: app/views/credentials/email/delete.html.erb:2
+#: app/views/credentials/email/delete.html.erb:7
+msgctxt "MultiAuth"
+msgid "Delete email authentication credential."
+msgstr ""
+
 #: app/views/credentials/email/activated.html.erb:2
-#: app/views/signup/open_id/created.html.erb:4
-#: app/views/signup/email/_progress.html.erb:13
 #: app/views/signup/email/activated.html.erb:4
 #: app/views/signup/email/activated.html.erb:8
+#: app/views/signup/email/_progress.html.erb:13
+#: app/views/signup/open_id/created.html.erb:4
 msgctxt "MultiAuth"
 msgid "Registration completed"
 msgstr ""
@@ -313,10 +407,14 @@ msgctxt "MultiAuth"
 msgid "Top"
 msgstr ""
 
-#: app/views/credentials/email/delete.html.erb:2
-#: app/views/credentials/email/delete.html.erb:7
+#: app/views/credentials/email/activation.html.erb:2
 msgctxt "MultiAuth"
-msgid "Delete email authentication credential."
+msgid "Activation"
+msgstr ""
+
+#: app/views/credentials/email/activation.html.erb:14
+msgctxt "MultiAuth"
+msgid "Activate"
 msgstr ""
 
 #: app/views/credentials/email/new.html.erb:2
@@ -341,107 +439,168 @@ msgctxt "MultiAuth"
 msgid "Back"
 msgstr ""
 
-#: app/views/credentials/email/activation.html.erb:2
+#: app/views/credentials/index.html.erb:2
 msgctxt "MultiAuth"
-msgid "Activation"
+msgid "Login setting"
 msgstr ""
 
-#: app/views/credentials/email/activation.html.erb:14
+#: app/views/credentials/index.html.erb:5
 msgctxt "MultiAuth"
-msgid "Activate"
+msgid "OpenID authentication"
 msgstr ""
 
-#: app/views/auth/logged_out.html.erb:2
+#: app/views/credentials/index.html.erb:20
 msgctxt "MultiAuth"
-msgid "You have been logged out."
+msgid "Add OpenID authentication"
 msgstr ""
 
-#: app/views/auth/logged_out.html.erb:21 app/views/auth/logged_in.html.erb:21
+#: app/views/credentials/index.html.erb:28
 msgctxt "MultiAuth"
-msgid "Please click %{link} when the page doesn't change."
+msgid "There are no OpenID authentication."
 msgstr ""
 
-#: app/views/auth/index.html.erb:1 app/views/auth/index.html.erb:16
-#: app/views/auth/index.html.erb:39 app/views/auth/open_id/index.html.erb:2
-#: app/views/auth/open_id/index.html.erb:17
-#: app/views/auth/email/index.html.erb:2
-#: app/views/auth/email/index.html.erb:64
-#: app/views/auth/email/index.html.erb:82
-#: app/views/signup/open_id/created.html.erb:6
+#: app/views/credentials/index.html.erb:46
+msgctxt "MultiAuth"
+msgid "Email address authentication"
+msgstr ""
+
+#: app/views/credentials/index.html.erb:61
+msgctxt "MultiAuth"
+msgid "Add email address authentication"
+msgstr ""
+
+#: app/views/credentials/index.html.erb:69
+msgctxt "MultiAuth"
+msgid "There are no email address authentication."
+msgstr ""
+
+#: app/views/credentials/index.html.erb:80
+msgctxt "MultiAuth"
+msgid "Waiting for activation"
+msgstr ""
+
+#: app/views/credentials/index.html.erb:93
+msgctxt "MultiAuth"
+msgid "Name authentication"
+msgstr ""
+
+#: app/views/credentials/index.html.erb:107
+msgctxt "MultiAuth"
+msgid "Add name authentication"
+msgstr ""
+
+#: app/views/credentials/index.html.erb:115
+msgctxt "MultiAuth"
+msgid "There are no name authentication."
+msgstr ""
+
+#: app/views/credentials/open_id/delete.html.erb:2
+#: app/views/credentials/open_id/delete.html.erb:7
+msgctxt "MultiAuth"
+msgid "Delete OpenID authentication credential."
+msgstr ""
+
+#: app/views/credentials/open_id/new.html.erb:2
+msgctxt "MultiAuth"
+msgid "Add OpenID authentication credential"
+msgstr ""
+
+#: app/views/signup/email/activated.html.erb:2
+#: app/views/signup/email/activation.html.erb:2
+#: app/views/signup/email/validated.html.erb:2
+#: app/views/signup/email/index.html.erb:2
+#: app/views/signup/email/created.html.erb:2
+#: app/views/signup/open_id/authenticated.html.erb:2
+#: app/views/signup/open_id/index.html.erb:2
+#: app/views/signup/open_id/created.html.erb:2
+msgctxt "MultiAuth"
+msgid "Signup"
+msgstr ""
+
 #: app/views/signup/email/activated.html.erb:9
+#: app/views/signup/open_id/created.html.erb:6
+#: app/views/auth/name/index.html.erb:1 app/views/auth/name/index.html.erb:63
+#: app/views/auth/name/index.html.erb:81 app/views/auth/email/index.html.erb:2
+#: app/views/auth/email/index.html.erb:64
+#: app/views/auth/email/index.html.erb:82 app/views/auth/index.html.erb:1
+#: app/views/auth/index.html.erb:16 app/views/auth/index.html.erb:39
+#: app/views/auth/open_id/index.html.erb:2
+#: app/views/auth/open_id/index.html.erb:17
 msgctxt "MultiAuth"
 msgid "Login"
 msgstr ""
 
-#: app/views/auth/index.html.erb:5
+#: app/views/signup/email/activation.html.erb:4
+#: app/views/signup/email/validated.html.erb:4
+#: app/views/signup/email/_progress.html.erb:12
 msgctxt "MultiAuth"
-msgid "By OpenID"
+msgid "Registration confirmation"
 msgstr ""
 
-#: app/views/auth/index.html.erb:21
+#: app/views/signup/email/activation.html.erb:9
 msgctxt "MultiAuth"
-msgid "By email address"
+msgid "Valid activation token"
 msgstr ""
 
-#: app/views/activation_mailer/request_for_credential.erb:1
+#: app/views/signup/email/activation.html.erb:11
 msgctxt "MultiAuth"
-msgid "Email address for authentication will be registered."
+msgid "Activated"
 msgstr ""
 
-#: app/views/activation_mailer/request_for_credential.erb:2
-#: app/views/activation_mailer/request_for_signup.erb:2
-#: app/views/activation_mailer/request_for_notice.erb:2
+#: app/views/signup/email/activation.html.erb:13
 msgctxt "MultiAuth"
-msgid "Registration is completed by accessing following URL."
+msgid "Inactivated"
 msgstr ""
 
-#: app/views/activation_mailer/request_for_credential.erb:8
-#: app/views/activation_mailer/request_for_signup.erb:8
-#: app/views/activation_mailer/request_for_notice.erb:8
+#: app/views/signup/email/activation.html.erb:22
 msgctxt "MultiAuth"
-msgid "- For access with cellular phone etc."
+msgid "Regist"
 msgstr ""
 
-#: app/views/activation_mailer/request_for_credential.erb:9
-#: app/views/activation_mailer/request_for_signup.erb:9
-#: app/views/activation_mailer/request_for_notice.erb:9
+#: app/views/signup/email/activation.html.erb:26
 msgctxt "MultiAuth"
-msgid ""
-"It is not possible to register from the cellular phone etc. that do not "
-"correspond to Cookie now."
+msgid "Invalid activation token"
 msgstr ""
 
-#: app/views/activation_mailer/request_for_credential.erb:10
-#: app/views/activation_mailer/request_for_signup.erb:10
-#: app/views/activation_mailer/request_for_notice.erb:10
-msgctxt "MultiAuth"
-msgid ""
-"Please register after forwarding this mail to PC etc. though it is time."
+#: app/views/signup/email/validated.html.erb:14
+msgid "EmailCredential|Password"
 msgstr ""
 
-#: app/views/activation_mailer/request_for_signup.erb:1
+#: app/views/signup/email/validated.html.erb:20
+#: app/views/signup/open_id/authenticated.html.erb:14
 msgctxt "MultiAuth"
-msgid "Thank you for the user registration to %{app}."
+msgid "Register"
 msgstr ""
 
-#: app/views/activation_mailer/complete_for_notice.erb:1
+#: app/views/signup/email/index.html.erb:4
 msgctxt "MultiAuth"
-msgid "The email address registration was completed."
+msgid "Signup by email address"
 msgstr ""
 
-#: app/views/activation_mailer/request_for_notice.erb:1
+#: app/views/signup/email/index.html.erb:27 app/views/signup/index.html.erb:60
 msgctxt "MultiAuth"
-msgid "Email address for notification will be registered."
+msgid "Confirm"
 msgstr ""
 
-#: app/views/activation_mailer/complete_for_credential.erb:1
+#: app/views/signup/email/created.html.erb:4
+#: app/views/signup/email/_progress.html.erb:11
 msgctxt "MultiAuth"
-msgid "The registration of the email address authentication was completed."
+msgid "Pre-registration completed"
 msgstr ""
 
-#: app/views/activation_mailer/complete_for_signup.erb:1
+#: app/views/signup/email/created.html.erb:9
 msgctxt "MultiAuth"
-msgid "The user registration was completed."
+msgid "Sent a mail to %{email}."
+msgstr ""
+
+#: app/views/signup/email/_progress.html.erb:9
+msgctxt "MultiAuth"
+msgid "Input login info"
+msgstr ""
+
+#: app/views/signup/email/_progress.html.erb:10
+msgctxt "MultiAuth"
+msgid "Confirm login info"
 msgstr ""
 
 #: app/views/signup/index.html.erb:2
@@ -511,94 +670,39 @@ msgctxt "MultiAuth"
 msgid "Recieve confirmation mail"
 msgstr ""
 
-#: app/views/signup/index.html.erb:60 app/views/signup/email/index.html.erb:27
-msgctxt "MultiAuth"
-msgid "Confirm"
-msgstr ""
-
-#: app/views/signup/open_id/authenticated.html.erb:2
-#: app/views/signup/open_id/index.html.erb:2
-#: app/views/signup/open_id/created.html.erb:2
-#: app/views/signup/email/activated.html.erb:2
-#: app/views/signup/email/index.html.erb:2
-#: app/views/signup/email/created.html.erb:2
-#: app/views/signup/email/validated.html.erb:2
-#: app/views/signup/email/activation.html.erb:2
-msgctxt "MultiAuth"
-msgid "Signup"
-msgstr ""
-
 #: app/views/signup/open_id/authenticated.html.erb:4
 msgctxt "MultiAuth"
 msgid "Authentication completed"
 msgstr ""
 
-#: app/views/signup/open_id/authenticated.html.erb:14
-#: app/views/signup/email/validated.html.erb:20
+#: app/views/auth/logged_out.html.erb:2
 msgctxt "MultiAuth"
-msgid "Register"
+msgid "You have been logged out."
 msgstr ""
 
-#: app/views/signup/email/_progress.html.erb:9
+#: app/views/auth/logged_out.html.erb:10 app/views/auth/logged_in.html.erb:10
 msgctxt "MultiAuth"
-msgid "Input login info"
+msgid "Please click %{link} when the page doesn't change."
 msgstr ""
 
-#: app/views/signup/email/_progress.html.erb:10
+#: app/views/auth/index.html.erb:5
 msgctxt "MultiAuth"
-msgid "Confirm login info"
+msgid "By OpenID"
 msgstr ""
 
-#: app/views/signup/email/_progress.html.erb:11
-#: app/views/signup/email/created.html.erb:4
+#: app/views/auth/index.html.erb:21
 msgctxt "MultiAuth"
-msgid "Pre-registration completed"
+msgid "By email address"
 msgstr ""
 
-#: app/views/signup/email/_progress.html.erb:12
-#: app/views/signup/email/validated.html.erb:4
-#: app/views/signup/email/activation.html.erb:4
+#: lib/multi_auth/action_controller.rb:34
 msgctxt "MultiAuth"
-msgid "Registration confirmation"
+msgid "Session has expired. Please login again."
 msgstr ""
 
-#: app/views/signup/email/index.html.erb:4
+#: lib/multi_auth/action_controller.rb:43
 msgctxt "MultiAuth"
-msgid "Signup by email address"
-msgstr ""
-
-#: app/views/signup/email/created.html.erb:9
-msgctxt "MultiAuth"
-msgid "Sent a mail to %{email}."
-msgstr ""
-
-#: app/views/signup/email/validated.html.erb:14
-msgid "EmailCredential|Password"
-msgstr ""
-
-#: app/views/signup/email/activation.html.erb:9
-msgctxt "MultiAuth"
-msgid "Valid activation token"
-msgstr ""
-
-#: app/views/signup/email/activation.html.erb:11
-msgctxt "MultiAuth"
-msgid "Activated"
-msgstr ""
-
-#: app/views/signup/email/activation.html.erb:13
-msgctxt "MultiAuth"
-msgid "Inactivated"
-msgstr ""
-
-#: app/views/signup/email/activation.html.erb:22
-msgctxt "MultiAuth"
-msgid "Regist"
-msgstr ""
-
-#: app/views/signup/email/activation.html.erb:26
-msgctxt "MultiAuth"
-msgid "Invalid activation token"
+msgid "Login required."
 msgstr ""
 
 #: lib/open_id_authentication/result.rb:5
@@ -624,14 +728,4 @@ msgstr ""
 #: lib/open_id_authentication/result.rb:9
 msgctxt "OpenIdAuthentication"
 msgid "OpenID verification needs setup"
-msgstr ""
-
-#: lib/multi_auth/action_controller.rb:34
-msgctxt "MultiAuth"
-msgid "Session has expired. Please login again."
-msgstr ""
-
-#: lib/multi_auth/action_controller.rb:43
-msgctxt "MultiAuth"
-msgid "Login required."
 msgstr ""
