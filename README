@@ -54,6 +54,15 @@ You can use default style sheet and icons.
 
   $ ruby script/generate multi_auth_public_assets
 
+Upgrade
+=======
+
+  $ ruby script/generate multi_auth_migration upgrade_multi_auth_tables
+
+Create migrations for multi_auth. Just add a table for NameCredential.
+
+  $ rake db:migrate
+
 
 Settings
 ========
@@ -67,6 +76,8 @@ Ex.
     s.from_address = 'yourname@example.com'
     s.user_model = 'YourUserModel'
     s.session_times_out_in = 1.hour
+    # if false do not display in credentials index
+    s.credentials = { :open_id => true, :email => true, :name => true }
   end
 
 You can use OpenID::CustomFetcher to use OpenID provider which uses SSL.
