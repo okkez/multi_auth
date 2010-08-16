@@ -28,6 +28,7 @@ ActionController::Routing::Routes.draw do |map|
   map.namespace :auth do |auth|
     auth.connect "email/:action", :controller => "email", :action => /(index|login)/
     auth.connect "open_id/:action", :controller => "open_id", :action => /(index|login)/
+    auth.connect "name/:action", :controller => "name", :action => /(index|login)/
   end
 
   map.credentials "credentials",  :controller => "credentials", :conditions => { :method => :get }
